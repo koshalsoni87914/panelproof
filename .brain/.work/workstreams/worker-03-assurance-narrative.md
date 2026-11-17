@@ -38,6 +38,15 @@ Make the system understandable to a creator and defensible to a judge. Worker 3 
 **Build:** studio workspaces, CI gate, model registry, monitoring, human feedback loop, privacy/provenance policy, and cost controls as separate future work.  
 **Exit:** backlog exists without contaminating hackathon claims.
 
+## Loop Engineering Protocol (Work → Test → Update → Work → Finalized)
+
+Every assurance, UI, and narrative deliverable must cycle through:
+1. **Work:** Build review bench UI components, evidence cards, claims register entries, and demo scripts.
+2. **Test:** Test against raw policy receipts, mock corrupted/unverified inputs, run security & secret scanners, and rehearse demo timing.
+3. **Update:** Simplify creator-facing microcopy, clarify reason explanations, plug edge-case UX states, and align README claims with actual repo capabilities.
+4. **Work (Re-verify):** Re-rehearse clean-clone installation twice, verify end-to-end screen recording walkthrough, and re-check all public claim links.
+5. **Finalized:** Tag pre-built/live release candidate, freeze submission packet, and lock final release assets.
+
 ## Definition of done
 
 Worker 3 is done only when a judge can understand the problem and proof in one pass, and every claim survives comparison with the actual repository and evidence packet.

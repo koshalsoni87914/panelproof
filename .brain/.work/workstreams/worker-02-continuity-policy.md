@@ -38,6 +38,15 @@ Define what PanelProof can responsibly check and convert evidence into an explai
 **Build:** run exact release corpus and produce `drift_report.json` or equivalent with all version metadata.  
 **Exit:** Worker 3 accepts the claims register wording against the measured report.
 
+## Loop Engineering Protocol (Work → Test → Update → Work → Finalized)
+
+Every continuity policy and evaluation phase must be delivered via this five-stage engineering cycle:
+1. **Work:** Define continuity schemas, trait/anchor definitions, evidence ledger schemas, and threshold configurations.
+2. **Test:** Run against the adversarial corpus (known-good, intentional changes, identity breaks, missing references, edge-case ambiguities).
+3. **Update:** Calibrate numerical thresholds, eliminate false positives/negatives, refine reason codes, and adjust fail-closed boundaries.
+4. **Work (Re-verify):** Re-run calibration metrics, recalculate precision/recall denominators, and ensure conservative aggregation rules hold.
+5. **Finalized:** Freeze threshold configs, export `drift_report.json`, seal policy version, and sign formal handoff to Worker 1 and Worker 3.
+
 ## Definition of done
 
 Worker 2 is done only when PanelProof can say “not enough evidence” honestly and can show why a known-bad fixture was blocked without claiming universal visual truth.

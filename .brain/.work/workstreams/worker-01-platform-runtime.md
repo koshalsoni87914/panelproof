@@ -39,6 +39,15 @@ Build the boring, reliable spine that lets the continuity policy run repeatedly,
 **Build:** packaging allowlist, lockfile audit, dependency health, clean-clone script, and offline fallback.  
 **Exit:** Worker 3 completes release gate twice from a clean state.
 
+## Loop Engineering Protocol (Work → Test → Update → Work → Finalized)
+
+Every platform and runtime capability must be delivered via this five-stage engineering cycle:
+1. **Work:** Scaffold or implement domain contracts, adapters, NDJSON streaming, CLI commands, or runtime runners.
+2. **Test:** Run contract schema tests, offline fixture replay, timeout boundaries, and deterministic clock checks.
+3. **Update:** Remediate malformed JSON handling, redact sensitive paths/secrets, patch adapter boundaries, and fix serialization flaws.
+4. **Work (Re-verify):** Re-run the full integration suite, verify idempotent outputs, and guarantee zero network dependency in offline mode.
+5. **Finalized:** Commit verified code, record cryptographic hashes, generate reproducible receipts, and issue formal handoff to Worker 2 and Worker 3.
+
 ## Definition of done
 
 Worker 1 is done only when runtime evidence can be replayed from a commit/config/corpus tuple and live failures resolve to explicit non-pass states.

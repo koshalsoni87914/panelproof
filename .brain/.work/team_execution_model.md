@@ -24,9 +24,16 @@
 
 **Primary acceptance:** every public claim maps to evidence, the creator can understand the result, and the release candidate works from a clean state twice.
 
-## Cadence
+## Cadence and Loop Engineering (Work → Test → Update → Work → Finalized)
 
-At phase start, all three review the contract and the exit artifact. During implementation, each worker keeps work in progress to one active phase and posts a short handoff note when a dependency is ready. At phase close, the receiving reviewer runs the acceptance command and records limitations. The team freezes the schema, claims, fixtures, and demo before adding polish.
+At phase start, all three review the contract and the exit artifact. During implementation, every worker must execute their work packages using the **Loop Engineering** cycle:
+1. **Work (Implement):** Build the phase capability or feature slice according to the domain contract.
+2. **Test (Verify):** Execute local acceptance tests, unit tests, and boundary assertions against test fixtures.
+3. **Update (Remediate):** Inspect failures, handle unhandled edge cases, adjust thresholds/contracts, and incorporate receiving-reviewer feedback.
+4. **Work (Re-verify & Refine):** Implement remediation, re-run full test suites, and prove regression-free state.
+5. **Finalized (Lock & Handoff):** Freeze the artifact, generate reproducible receipts, update phase records, and post the formal handoff note.
+
+Each worker keeps work in progress to one active phase. At phase close, the receiving reviewer runs the acceptance command and records limitations. The team freezes the schema, claims, fixtures, and demo before adding polish.
 
 ## Synchronization rule (Pull Before Push)
 

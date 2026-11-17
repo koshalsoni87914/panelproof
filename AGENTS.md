@@ -8,6 +8,8 @@ Do not rewrite history to obscure the pre-built/live-built split. Preserve commi
 
 **Pull before push:** Every worker must synchronize with the remote (`git pull --rebase origin main`) and run local verification before pushing any commit. Out-of-order pushes and merge race conditions are strictly prohibited.
 
+**Loop engineering:** Every worker must build within the iterative engineering loop: `Work (implement) → Test (verify) → Update (remediate) → Work (re-verify) → Finalized (lock)`. Skipping automated verification or handoff gates is disallowed.
+
 ## Exclusive domains
 
 **Worker 1 — Platform/runtime:** `apps/`, `packages/contracts/`, `runtime/`, `adapters/`, `scripts/`, runtime fixtures, manifests/lockfiles, and integration plumbing.
