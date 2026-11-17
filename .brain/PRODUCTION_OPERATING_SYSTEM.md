@@ -16,6 +16,7 @@ This document turns the project brain into a lightweight production-control syst
 8. **Freeze together.** Code, fixtures, reports, README, video, claims, and capability ledger freeze as one release candidate.
 9. **No silent scope expansion.** A new feature requires an owner, acceptance criterion, risk note, and explicit trade-off against the six-hour live sprint.
 10. **Reuse disclosure.** Record prior code, templates, libraries, checkpoints, datasets, prompts, and generated assets. Do not present reused work as live-built work.
+11. **Pull before push (Sync-before-push).** Every worker must pull and rebase (`git pull --rebase origin main`) before pushing. Pushing without synchronizing with remote commits is strictly prohibited to prevent race conditions, clobbered evidence, and non-fast-forward merge conflicts.
 
 ## State transitions
 

@@ -28,6 +28,10 @@
 
 At phase start, all three review the contract and the exit artifact. During implementation, each worker keeps work in progress to one active phase and posts a short handoff note when a dependency is ready. At phase close, the receiving reviewer runs the acceptance command and records limitations. The team freezes the schema, claims, fixtures, and demo before adding polish.
 
+## Synchronization rule (Pull Before Push)
+
+Every worker must synchronize with the remote (`git pull --rebase origin main`) and verify passing acceptance tests prior to pushing any commits. Pushing without pulling is prohibited to protect the shared commit ledger and avoid merge conflicts.
+
 ## Conflict rule
 
 A worker may not edit another worker’s exclusive domain without a written handoff and an updated dependency note. Product language changes require Worker 3 review; policy changes require Worker 2 review; runtime/contract changes require Worker 1 review.

@@ -6,6 +6,8 @@ The `.brain` directory is the project source of truth. Read the relevant contrac
 
 Do not rewrite history to obscure the pre-built/live-built split. Preserve commit timestamps and disclose reused code, templates, models, datasets, prompts, and assets. No worker may declare a capability `RELEASED` without an executable artifact or reproducible fixture proof.
 
+**Pull before push:** Every worker must synchronize with the remote (`git pull --rebase origin main`) and run local verification before pushing any commit. Out-of-order pushes and merge race conditions are strictly prohibited.
+
 ## Exclusive domains
 
 **Worker 1 — Platform/runtime:** `apps/`, `packages/contracts/`, `runtime/`, `adapters/`, `scripts/`, runtime fixtures, manifests/lockfiles, and integration plumbing.

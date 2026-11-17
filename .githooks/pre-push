@@ -1,0 +1,45 @@
+#!/bin/sh
+# PanelProof Git Pre-Push Hook: Enforces Pull-Before-Push
+# Prevents blind pushes and ensures local branch is synchronized with remote before pushing.
+
+remote="$1"
+url="$2"
+
+if [ -z "$remote" ]; then
+    remote="origin"
+fi
+
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+if [ "$current_branch" = "HEAD" ]; then
+    exit 0
+fi
+
+echo "==> [PanelProof Guard] Checking remote synchronization for '$current_branch'..."
+
+# Fetch remote changes
+git fetch "$remote" "$current_branch" 2>/dev/null
+
+upstream="refs/remotes/$remote/$current_branch"
+
+if git rev-parse --verify "$upstream" >/dev/null 2>&1; then
+    behind_count=$(git rev-list --count HEAD.."$upstream" 2>/dev/null || echo 0)
+    if [ "$behind_count" -gt 0 ]; then
+        echo "==> [PanelProof Guard] Local branch is behind $remote/$current_branch by $behind_count commit(s)."
+        echo "==> [PanelProof Guard] Pulling latest changes with rebase..."
+        git pull --rebase "$remote" "$current_branch"
+        pull_exit=$?
+        if [ $pull_exit -ne 0 ]; then
+            echo "==> [PanelProof Guard] ERROR: git pull --rebase encountered conflicts or failed."
+            echo "==> [PanelProof Guard] Please resolve conflicts, run verification tests, and then push."
+            exit 1
+        fi
+        echo "==> [PanelProof Guard] Successfully rebased with $remote/$current_branch."
+        echo "==> [PanelProof Guard] Halting push to allow running acceptance tests on the rebased code."
+        echo "==> [PanelProof Guard] Please re-run 'git push' to complete the push."
+        exit 1
+    fi
+fi
+
+echo "==> [PanelProof Guard] Synchronization check passed: branch is up to date."
+exit 0
