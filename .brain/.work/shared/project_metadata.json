@@ -1,0 +1,11 @@
+{
+  "project": "PanelProof",
+  "track": "04 - Visual Art & Design Assist",
+  "status": "design-frozen-mvp-not-yet-implemented",
+  "core_thesis": "Verify and repair visual continuity instead of blindly regenerating art.",
+  "team_pattern": "claim -> independent verifier -> evidence receipt -> conservative gate",
+  "mvp": ["claim schema", "clean/drifted/error audit", "evidence receipt", "review UI", "region lock invariant"],
+  "finale_targets": ["sequence mode", "bounded repair", "auto-region targeting", "branch/revert", "export gate"],
+  "prohibited_claims": ["perfect artistic understanding", "guaranteed consistency", "all features implemented"],
+  "created_from": ["mockguard brain conventions", "uploaded PanelProof design documents"]
+}

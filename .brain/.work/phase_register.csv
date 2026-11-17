@@ -1,0 +1,32 @@
+phase,worker,goal,entry_gate,exit_artifact,receiving_reviewer,status,hackathon_priority
+P0,Worker 3,Contract threat and reuse freeze,Team agrees product name and Track 04 scope,Decision log claims register threat model reuse inventory,Workers 1 and 2,READY,critical
+P1,Worker 1,Reproducible foundation,Contracts versioned and runtime target chosen,Clean clone boots schema validation fixture discovery,Worker 3,READY,critical
+P2,Worker 2,Continuity manifest and corpus,Claim vocabulary and supported boundary frozen,Manifest corpus labels and intentional-change rules,Worker 1,READY,critical
+P3,Worker 1,Evidence adapter layer,Manifest and evidence ledger accepted,Adapter contract tests and bounded evidence packets,Worker 2,PLANNED,critical
+P4,Worker 2,Fail-closed policy gate,Adapter evidence shape stable,Policy unit tests and reason-code receipts,Worker 1,PLANNED,critical
+P5,Worker 3,Creator review bench,Receipt schema and policy vocabulary stable,Known-good/bad UI flow with evidence cards,Workers 1 and 2,PLANNED,critical
+P6,Worker 2,Adversarial evaluation,End-to-end fixture audit works,Metrics report with denominators exclusions thresholds,Worker 3,PLANNED,live-sprint
+P7,Worker 1,Live extension sequence or repair,Release candidate baseline tagged,Live commits trace rollback and before/after proof,Worker 2,PLANNED,live-sprint
+P8,Worker 3,Integration demo and submission freeze,All critical phases pass,Two clean rehearsals README video ledger disclosure,All,PLANNED,critical
+P9,Worker 1,Post-hackathon production hardening,Release candidate accepted,CI gate model registry monitoring privacy and studio backlog,Workers 2 and 3,PLANNED,post-event
+W1-P0,Worker 1,Runtime contract review,Threat and interface contracts approved,Run envelope hashes and typed adapter interface,Worker 2,PLANNED,critical
+W1-P1,Worker 1,Foundation and bounded execution,Runtime target and lockfile chosen,verify:foundation command passes,Worker 3,PLANNED,critical
+W1-P2,Worker 1,Evidence adapters,Manifest and evidence ledger ready,Adapters return evidence or explicit non-pass states,Worker 2,PLANNED,critical
+W1-P3,Worker 1,Receipts and report runtime,Adapter result schema stable,Replayable NDJSON and report validator,Worker 3,PLANNED,critical
+W1-P4,Worker 1,End-to-end integration,Policy and UI contracts stable,Clean drifted and error fixture run,Worker 3,PLANNED,critical
+W1-P5,Worker 1,Live extension,Baseline tag preserved,Sequence propagation or bounded repair live proof,Worker 2,PLANNED,live-sprint
+W1-P6,Worker 1,Release hardening,All feature paths frozen,Package allowlist clean clone and offline fallback,Worker 3,PLANNED,critical
+W2-P0,Worker 2,Continuity boundary,Track 04 product boundary approved,Manifest anchors ambiguity rules and reason codes,Worker 1,PLANNED,critical
+W2-P1,Worker 2,Evidence ledger,Manifest fields stable,Per-check evidence record and uncertainty preserved,Worker 1,PLANNED,critical
+W2-P2,Worker 2,Deterministic policy,Receipt and verdict schema stable,All aggregation and fail-closed tests pass,Worker 1,PLANNED,critical
+W2-P3,Worker 2,Corpus calibration,Fixture runner and labels available,Corpus report with measured denominators,Worker 3,PLANNED,live-sprint
+W2-P4,Worker 2,One model-backed signal,Deterministic baseline green,One bounded adapter calibration slice,Worker 3,PLANNED,stretch
+W2-P5,Worker 2,Live policy extension,Live adapter or sequence data exists,Before/after proof and rollback behavior,Worker 3,PLANNED,live-sprint
+W2-P6,Worker 2,Final measurement,Release corpus frozen,Final drift report and claims wording,Worker 3,PLANNED,critical
+W3-P0,Worker 3,Claims threat and reuse freeze,Team product boundary agreed,Claims threat and disclosure inventory,Workers 1 and 2,PLANNED,critical
+W3-P1,Worker 3,Creator review bench,Policy vocabulary stable,Evidence card UX and override flow,Worker 2,PLANNED,critical
+W3-P2,Worker 3,QA and adversarial assurance,Runtime and policy paths available,Security and release-blocking matrix passes,Workers 1 and 2,PLANNED,critical
+W3-P3,Worker 3,50/50 evidence packet,Baseline commit identified,Change ledger history and reuse disclosure,All,PLANNED,critical
+W3-P4,Worker 3,Demo and pitch lock,Vertical slice green,Two clean rehearsals video README judge Q&A,All,PLANNED,critical
+W3-P5,Worker 3,Submission release,All release gates pass,Final repo video screenshots and submission checklist,All,PLANNED,critical
+W3-P6,Worker 3,Post-event product backlog,Submission frozen,Studio privacy monitoring and roadmap backlog,Workers 1 and 2,PLANNED,post-event

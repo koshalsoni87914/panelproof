@@ -1,0 +1,21 @@
+ID,Area,Case,Expected,Owner,Release blocking
+QA-001,contract,valid manifest,accept schema,Worker 1,yes
+QA-002,contract,unknown claim kind,reject schema with reason,Worker 1,yes
+QA-003,policy,all required checks pass,ALLOW,Worker 2,yes
+QA-004,policy,required anchor contradicted,BLOCK,Worker 2,yes
+QA-005,policy,missing evidence,UNVERIFIED not ALLOW,Worker 2,yes
+QA-006,policy,allowed intentional change,WARN or ALLOW per manifest,Worker 2,yes
+QA-007,policy,unsupported layout,UNSUPPORTED or UNVERIFIED,Worker 2,yes
+QA-008,adapter,timeout,explicit TIMEOUT and fail closed,Worker 1,yes
+QA-009,adapter,malformed response,validation error and fail closed,Worker 1,yes
+QA-010,report,receipt replay,identical decision for same versions,Worker 1,yes
+QA-011,security,secret in logs,redacted or test fails,Worker 3,yes
+QA-012,security,path traversal,reject outside allowlist,Worker 3,yes
+QA-013,security,oversized/invalid asset,reject with reason,Worker 3,yes
+QA-014,ux,creator opens BLOCK,evidence and next action visible,Worker 3,yes
+QA-015,ux,override without reason,prevent submission,Worker 3,yes
+QA-016,provenance,fixture-only path,visible fixture label,Worker 3,yes
+QA-017,eval,known-bad corpus,report false-accept denominator,Worker 2,yes
+QA-018,release,clean clone,setup and demo commands work,Worker 3,yes
+QA-019,release,reuse disclosure,prior work and dependencies listed,Worker 3,yes
+QA-020,release,post-freeze feature,blocked unless defect fix,All,yes

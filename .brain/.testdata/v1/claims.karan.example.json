@@ -1,0 +1,86 @@
+{
+  "schema": "panelproof/claims@1",
+  "subject": {
+    "id": "karan",
+    "displayName": "Karan",
+    "refs": ["refs/karan_01.png", "refs/karan_02.png"],
+    "createdAt": "2026-11-17T18:00:00+05:30",
+    "provenance": "artist-declared"
+  },
+  "stylePlate": "style/style_plate.png",
+  "claims": [
+    {
+      "id": "face.identity",
+      "kind": "identity",
+      "severity": "block",
+      "label": "Same face as the reference sheet",
+      "expect": { "model": "insightface/buffalo_l", "minCosine": 0.82 },
+      "source": "artist-declared",
+      "verifier": "identity",
+      "note": "Ground truth is the artist's own sheet. Never model-inferred."
+    },
+    {
+      "id": "trait.scar.side",
+      "kind": "attribute",
+      "severity": "block",
+      "label": "Scar on the LEFT jaw",
+      "expect": {
+        "question": "Is the scar on the character's left jaw (viewer's right when facing us)?",
+        "verifier": "vlm",
+        "minConfidence": 0.75
+      },
+      "source": "artist-declared",
+      "verifier": "attribute",
+      "note": "Laterality is the trait that breaks most often in multi-character panels."
+    },
+    {
+      "id": "trait.hair.streak",
+      "kind": "attribute",
+      "severity": "warn",
+      "label": "Silver streak in the fringe",
+      "expect": {
+        "question": "Does the character have a single silver streak in the front fringe?",
+        "verifier": "vlm",
+        "minConfidence": 0.7
+      },
+      "source": "artist-declared",
+      "verifier": "attribute"
+    },
+    {
+      "id": "outfit.coat",
+      "kind": "attribute",
+      "severity": "warn",
+      "label": "Navy double-breasted coat, brass buttons",
+      "expect": {
+        "question": "Is the character wearing a navy double-breasted coat with brass buttons?",
+        "verifier": "vlm",
+        "minConfidence": 0.7
+      },
+      "source": "artist-declared",
+      "verifier": "attribute"
+    },
+    {
+      "id": "palette.house",
+      "kind": "palette",
+      "severity": "warn",
+      "label": "House palette (style plate)",
+      "expect": { "deltaEMax": 8.0, "against": "style/style_plate.png" },
+      "source": "artist-declared",
+      "verifier": "palette"
+    },
+    {
+      "id": "trait.eye.colour",
+      "kind": "attribute",
+      "severity": "warn",
+      "label": "Grey-green eyes",
+      "expect": {
+        "question": "Are the character's eyes grey-green?",
+        "verifier": "vlm",
+        "minConfidence": 0.7
+      },
+      "source": "model-inferred",
+      "verifier": "attribute",
+      "note": "Inferred by the vision model on upload, NOT confirmed by the artist. Inferred claims may warn but may never block."
+    }
+  ]
+}

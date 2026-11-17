@@ -1,0 +1,43 @@
+{
+  "schema": "panelproof/gate-config@1",
+  "policy": {
+    "onVerifierError": "UNVERIFIED",
+    "abstentionFailsGate": true,
+    "inferredClaimsMayBlock": false,
+    "overrideRequiresReason": true,
+    "exportRequires": { "noBlock": true, "noUnverified": true },
+    "maxRepairAttempts": 2,
+    "stopRepairWhen": "blockingClaims.length === 0 || attempts >= maxRepairAttempts"
+  },
+  "severity": {
+    "block": { "failsGate": true },
+    "warn": { "failsGate": false, "countsInReport": true }
+  },
+  "thresholds": {
+    "identity.minCosine": 0.82,
+    "attribute.minConfidence": 0.75,
+    "palette.deltaEMax": 8.0
+  },
+  "calibration": {
+    "corpus": "eval/corpus.json",
+    "swept": {
+      "identity.minCosine": [0.70, 0.76, 0.82, 0.86, 0.90],
+      "attribute.minConfidence": [0.60, 0.70, 0.75, 0.85]
+    },
+    "chosenOperatingPoint": {
+      "identity.minCosine": 0.82,
+      "attribute.minConfidence": 0.75,
+      "rationale": "maximise wrong-trait recall at <=10% false-block on eval/corpus.json v1; see eval/results.json"
+    }
+  },
+  "budget": {
+    "verifyCostUsdPerPanelMax": 0.01,
+    "repairCostUsdPerAttemptMax": 0.15,
+    "hardStopUsd": 5.0
+  },
+  "demoSafe": {
+    "enabledEnv": "PANELPROOF_DEMO_SAFE",
+    "replayFixtures": true,
+    "note": "replays fixtures/ for generation calls only; verification and policy always run for real"
+  }
+}
