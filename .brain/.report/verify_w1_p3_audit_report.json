@@ -1,0 +1,153 @@
+{
+  "schema": "panelproof/report@1",
+  "reportId": "rep_1794928106597",
+  "generatedAt": "2026-11-17T18:30:00.000Z",
+  "metadata": {
+    "corpusVersion": "v1",
+    "thresholdVersion": "v1",
+    "sourceHash": "db889a8c6f784b25f46fa29be457134f9be80795b4b6fdb98baea9f58d143a88",
+    "nodeVersion": "v22.11.0",
+    "platform": "win32",
+    "config": {
+      "onVerifierError": "UNVERIFIED",
+      "abstentionFailsGate": true
+    }
+  },
+  "summary": {
+    "totalPanels": 3,
+    "decisions": {
+      "ACCEPT": 1,
+      "WARN": 0,
+      "BLOCK": 1,
+      "UNVERIFIED": 1
+    },
+    "totalEvidenceRecords": 3,
+    "failClosedEnforced": true
+  },
+  "receipts": [
+    {
+      "schema": "panelproof/receipt@1",
+      "panel": "p03",
+      "nodeId": "p03_v1",
+      "decision": "ACCEPT",
+      "machineDecision": "ACCEPT",
+      "worstOf": [
+        "ACCEPT"
+      ],
+      "blockingClaims": [],
+      "continuity": 1,
+      "totalClaims": 1,
+      "override": null,
+      "repair": {
+        "attempted": 0,
+        "maxAttempts": 2
+      },
+      "failClosed": true
+    },
+    {
+      "schema": "panelproof/receipt@1",
+      "panel": "p04",
+      "nodeId": "p04_v1",
+      "decision": "BLOCK",
+      "machineDecision": "BLOCK",
+      "worstOf": [
+        "BLOCK"
+      ],
+      "blockingClaims": [
+        "trait.scar.side"
+      ],
+      "continuity": 0,
+      "totalClaims": 1,
+      "override": null,
+      "repair": {
+        "attempted": 0,
+        "maxAttempts": 2
+      },
+      "failClosed": true
+    },
+    {
+      "schema": "panelproof/receipt@1",
+      "panel": "p05",
+      "nodeId": "p05_v1",
+      "decision": "UNVERIFIED",
+      "machineDecision": "UNVERIFIED",
+      "worstOf": [
+        "UNVERIFIED"
+      ],
+      "blockingClaims": [
+        "face.identity"
+      ],
+      "continuity": 0,
+      "totalClaims": 1,
+      "override": null,
+      "repair": {
+        "attempted": 0,
+        "maxAttempts": 2
+      },
+      "failClosed": true
+    }
+  ],
+  "evidenceLedger": [
+    {
+      "panel": "p03",
+      "nodeId": "p03_v1",
+      "claim": "face.identity",
+      "severity": "block",
+      "verdict": "ACCEPT",
+      "verifier": "insightface/buffalo_l",
+      "confidence": 0.93,
+      "threshold": 0.82,
+      "observed": "cosine 0.93 vs karan_01",
+      "evidence": {
+        "crop": "nodes/p03_v1/crop_face.jpg",
+        "bbox": [
+          388,
+          164,
+          572,
+          340
+        ]
+      },
+      "latencyMs": 96,
+      "costUsd": 0,
+      "ts": "2026-11-17T18:30:00.000Z"
+    },
+    {
+      "panel": "p04",
+      "nodeId": "p04_v1",
+      "claim": "trait.scar.side",
+      "severity": "block",
+      "verdict": "BLOCK",
+      "verifier": "gemini-3-flash/vision",
+      "confidence": 0.34,
+      "threshold": 0.75,
+      "observed": "scar appears on the character's RIGHT jaw",
+      "evidence": {
+        "crop": "nodes/p04_v1/crop_face.jpg",
+        "bbox": [
+          412,
+          180,
+          596,
+          352
+        ]
+      },
+      "latencyMs": 806,
+      "costUsd": 0.00041,
+      "ts": "2026-11-17T18:30:00.000Z"
+    },
+    {
+      "panel": "p05",
+      "nodeId": "p05_v1",
+      "claim": "face.identity",
+      "severity": "block",
+      "verdict": "UNVERIFIED",
+      "verifier": "insightface/buffalo_l",
+      "confidence": null,
+      "threshold": 0.82,
+      "observed": "vision service unreachable after 2 retries (ETIMEDOUT)",
+      "evidence": null,
+      "latencyMs": 10240,
+      "costUsd": 0,
+      "ts": "2026-11-17T18:30:00.000Z"
+    }
+  ]
+}

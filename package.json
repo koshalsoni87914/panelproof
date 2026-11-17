@@ -1,0 +1,24 @@
+{
+  "name": "panelproof",
+  "version": "0.1.0",
+  "description": "Fail-closed continuity and hallucination gate for controllable sequential-art workflows",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "verify:foundation": "node scripts/verify-foundation.js",
+    "verify:contracts": "node scripts/verify-contracts.js",
+    "verify:adapters": "node scripts/verify-adapters.js",
+    "verify:receipts": "node scripts/verify-receipts.js",
+    "verify:w1-50": "node scripts/verify-contracts.js && node scripts/verify-foundation.js && node scripts/verify-adapters.js && node scripts/verify-receipts.js",
+    "audit:fixtures": "node scripts/run-fixture-audit.js",
+    "test": "npm run verify:w1-50"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "PanelProof Team",
+  "license": "UNLICENSED"
+}

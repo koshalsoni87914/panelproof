@@ -1,0 +1,12 @@
+{
+  "name": "@panelproof/contracts",
+  "version": "1.0.0",
+  "description": "PanelProof core interface contracts, schemas, and typed error definitions",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node ../../scripts/verify-contracts.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

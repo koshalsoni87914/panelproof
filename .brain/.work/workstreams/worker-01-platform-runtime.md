@@ -10,20 +10,20 @@ Build the boring, reliable spine that lets the continuity policy run repeatedly,
 
 ## Phases
 
-### W1-P0 — Runtime contract review
+### W1-P0 — Runtime contract review [STATUS: TESTED / VERIFIED]
 **Input:** interface contracts, threat model, event constraints.  
 **Build:** run envelope, IDs, hashes, schema versioning, adapter interface.  
 **Exit:** malformed input and version mismatch are rejected with typed reasons; Worker 2 signs the handoff.
 
-### W1-P1 — Reproducible foundation
+### W1-P1 — Reproducible foundation [STATUS: TESTED / VERIFIED]
 **Build:** pinned Node/Python versions, environment check, fixture loader, deterministic clock injection, structured logger, bounded worker execution, and local artifact directory.  
 **Exit command:** `npm run verify:foundation` or equivalent proves clean install, schema validation, and fixture discovery.
 
-### W1-P2 — Evidence adapter layer
+### W1-P2 — Evidence adapter layer [STATUS: TESTED / VERIFIED]
 **Build:** deterministic manifest/reference/order adapters first; optional DINO/segmentation/vision adapters behind the same interface. Persist model ID, inference mode, preprocessing, latency, cost, and failure reason.  
 **Exit:** adapters never return a bare boolean; they return evidence or an explicit non-pass state.
 
-### W1-P3 — Receipt and report runtime
+### W1-P3 — Receipt and report runtime [STATUS: TESTED / VERIFIED]
 **Build:** NDJSON evidence ledger, panel decision receipt, report schema validator, artifact hashing, retry/cancellation, timeout, and redacted logs.  
 **Exit:** one command produces a replayable report with no secrets or absolute private paths.
 

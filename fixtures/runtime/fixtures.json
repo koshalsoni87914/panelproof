@@ -1,0 +1,229 @@
+{
+  "schema": "panelproof/fixtures@1",
+  "fixtures": [
+    {
+      "id": "C-001",
+      "name": "clean-panel",
+      "subject": "karan",
+      "panel": "p03",
+      "nodeId": "p03_v1",
+      "description": "Clean panel matching reference sheet exactly",
+      "claims": [
+        {
+          "claim": "face.identity",
+          "severity": "block",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.93,
+          "observed": "cosine 0.93 vs karan_01",
+          "crop": "nodes/p03_v1/crop_face.jpg",
+          "bbox": [388, 164, 572, 340]
+        },
+        {
+          "claim": "trait.scar.side",
+          "severity": "block",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.91,
+          "observed": "scar visible on the character's left jaw",
+          "crop": "nodes/p03_v1/crop_face.jpg",
+          "bbox": [388, 164, 572, 340]
+        },
+        {
+          "claim": "trait.hair.streak",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.88,
+          "observed": "single silver streak visible in fringe"
+        },
+        {
+          "claim": "outfit.coat",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.85,
+          "observed": "navy coat with brass buttons visible"
+        },
+        {
+          "claim": "palette.house",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.95,
+          "observed": "deltaE 3.2 <= 8.0"
+        },
+        {
+          "claim": "trait.eye.colour",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.82,
+          "observed": "grey-green eyes observed"
+        }
+      ],
+      "expectedDecision": "ACCEPT"
+    },
+    {
+      "id": "D-001",
+      "name": "drifted-scar",
+      "subject": "karan",
+      "panel": "p04",
+      "nodeId": "p04_v1",
+      "description": "Drifted panel where scar appears on opposite (RIGHT) jaw",
+      "claims": [
+        {
+          "claim": "face.identity",
+          "severity": "block",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.89,
+          "observed": "cosine 0.89 vs karan_01"
+        },
+        {
+          "claim": "trait.scar.side",
+          "severity": "block",
+          "expectedVerdict": "BLOCK",
+          "confidence": 0.34,
+          "observed": "scar appears on the character's RIGHT jaw",
+          "crop": "nodes/p04_v1/crop_face.jpg",
+          "bbox": [412, 180, 596, 352]
+        },
+        {
+          "claim": "trait.hair.streak",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.84,
+          "observed": "silver streak present in fringe"
+        },
+        {
+          "claim": "outfit.coat",
+          "severity": "warn",
+          "expectedVerdict": "WARN",
+          "confidence": 0.62,
+          "observed": "black coat without buttons"
+        },
+        {
+          "claim": "palette.house",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.91,
+          "observed": "deltaE 4.1 <= 8.0"
+        },
+        {
+          "claim": "trait.eye.colour",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.79,
+          "observed": "grey-green eyes observed"
+        }
+      ],
+      "expectedDecision": "BLOCK"
+    },
+    {
+      "id": "E-001",
+      "name": "verifier-unavailable",
+      "subject": "karan",
+      "panel": "p05",
+      "nodeId": "p05_v1",
+      "description": "Verifier error: remote model timed out, fail-closed policy applies",
+      "claims": [
+        {
+          "claim": "face.identity",
+          "severity": "block",
+          "expectedVerdict": "UNVERIFIED",
+          "confidence": null,
+          "observed": "vision service unreachable after 2 retries (ETIMEDOUT)",
+          "error": "ETIMEDOUT"
+        },
+        {
+          "claim": "trait.scar.side",
+          "severity": "block",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.90,
+          "observed": "scar visible on the character's left jaw"
+        },
+        {
+          "claim": "trait.hair.streak",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.85,
+          "observed": "silver streak visible"
+        },
+        {
+          "claim": "outfit.coat",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.81,
+          "observed": "navy coat"
+        },
+        {
+          "claim": "palette.house",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.92,
+          "observed": "palette verified"
+        },
+        {
+          "claim": "trait.eye.colour",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.78,
+          "observed": "grey-green eyes"
+        }
+      ],
+      "expectedDecision": "UNVERIFIED"
+    },
+    {
+      "id": "L-001",
+      "name": "locked-face-edit",
+      "subject": "karan",
+      "panel": "p06",
+      "nodeId": "p06_v1",
+      "description": "Region lock invariant: locked face pixels remain unchanged after edit",
+      "lockedRegion": {
+        "region": "face",
+        "bbox": [388, 164, 572, 340],
+        "deltaPixels": 0
+      },
+      "claims": [
+        {
+          "claim": "face.identity",
+          "severity": "block",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.94,
+          "observed": "locked region face identical to parent node"
+        },
+        {
+          "claim": "trait.scar.side",
+          "severity": "block",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.93,
+          "observed": "scar visible on the character's left jaw in locked region"
+        },
+        {
+          "claim": "trait.hair.streak",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.87,
+          "observed": "silver streak verified"
+        },
+        {
+          "claim": "outfit.coat",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.83,
+          "observed": "edited outfit accepted"
+        },
+        {
+          "claim": "palette.house",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.90,
+          "observed": "house palette verified"
+        },
+        {
+          "claim": "trait.eye.colour",
+          "severity": "warn",
+          "expectedVerdict": "ACCEPT",
+          "confidence": 0.80,
+          "observed": "grey-green eyes verified"
+        }
+      ],
+      "expectedDecision": "ACCEPT"
+    }
+  ]
+}
