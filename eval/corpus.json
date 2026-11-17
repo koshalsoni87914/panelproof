@@ -1,0 +1,49 @@
+{
+  "$schema": "panelproof/corpus@1",
+  "version": "1.0.0",
+  "description": "PanelProof Adversarial Continuity Evaluation Corpus v1",
+  "cases": [
+    {
+      "id": "C-001",
+      "fixturePath": "fixtures/continuity/C-001-clean-panel.json",
+      "category": "clean",
+      "expectedDecision": "ACCEPT"
+    },
+    {
+      "id": "D-001",
+      "fixturePath": "fixtures/continuity/D-001-drifted-scar.json",
+      "category": "drift",
+      "expectedDecision": "BLOCK"
+    },
+    {
+      "id": "E-001",
+      "fixturePath": "fixtures/continuity/E-001-verifier-unavailable.json",
+      "category": "fail-closed",
+      "expectedDecision": "UNVERIFIED"
+    },
+    {
+      "id": "L-001",
+      "fixturePath": "fixtures/continuity/L-001-locked-face.json",
+      "category": "invariant",
+      "expectedDecision": "BLOCK"
+    },
+    {
+      "id": "A-001",
+      "fixturePath": "fixtures/continuity/A-001-ambiguous-angle.json",
+      "category": "ambiguity",
+      "expectedDecision": "UNVERIFIED"
+    },
+    {
+      "id": "M-001",
+      "fixturePath": "fixtures/continuity/M-001-missing-reference.json",
+      "category": "missing-ref",
+      "expectedDecision": "UNVERIFIED"
+    },
+    {
+      "id": "I-001",
+      "fixturePath": "fixtures/continuity/I-001-inferred-claim-fail.json",
+      "category": "provenance-guard",
+      "expectedDecision": "WARN"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "D-001",
+  "name": "drifted-scar",
+  "subject": "karan",
+  "description": "Adversarial drift: scar erroneously rendered on right jaw instead of left jaw",
+  "expectedDecision": "BLOCK",
+  "expectedBlockingClaims": ["trait.scar.side"],
+  "claims": [
+    {
+      "id": "face.identity",
+      "kind": "identity",
+      "severity": "block",
+      "source": "artist-declared",
+      "expect": { "minCosine": 0.82 }
+    },
+    {
+      "id": "trait.scar.side",
+      "kind": "attribute",
+      "severity": "block",
+      "source": "artist-declared",
+      "expect": { "minConfidence": 0.75 }
+    }
+  ],
+  "observations": {
+    "face.identity": {
+      "verifier": "insightface/buffalo_l",
+      "confidence": 0.91,
+      "observed": "cosine 0.91 vs refs/karan_01.png",
+      "evidence": { "crop": "nodes/p04_v1/crop_face.jpg", "bbox": [412, 180, 596, 352] },
+      "latencyMs": 92,
+      "costUsd": 0.0
+    },
+    "trait.scar.side": {
+      "verifier": "gemini-3-flash/vision",
+      "confidence": 0.34,
+      "observed": "scar appears on the character's RIGHT jaw (laterality inverted)",
+      "evidence": { "crop": "nodes/p04_v1/crop_face.jpg", "bbox": [412, 180, 596, 352] },
+      "latencyMs": 806,
+      "costUsd": 0.00041
+    }
+  }
+}

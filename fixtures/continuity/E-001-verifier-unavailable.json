@@ -1,0 +1,26 @@
+{
+  "id": "E-001",
+  "name": "verifier-unavailable",
+  "subject": "karan",
+  "description": "Fail-closed check: verifier timeout simulates network partition or backend error",
+  "expectedDecision": "UNVERIFIED",
+  "expectedFailClosed": true,
+  "claims": [
+    {
+      "id": "face.identity",
+      "kind": "identity",
+      "severity": "block",
+      "source": "artist-declared",
+      "expect": { "minCosine": 0.82 }
+    }
+  ],
+  "observations": {
+    "face.identity": {
+      "verifier": "insightface/buffalo_l",
+      "timedOut": true,
+      "latencyMs": 5200,
+      "costUsd": 0.0,
+      "error": "Verifier timeout after 5000ms"
+    }
+  }
+}

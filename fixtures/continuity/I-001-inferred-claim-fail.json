@@ -1,0 +1,35 @@
+{
+  "id": "I-001",
+  "name": "inferred-claim-fail",
+  "subject": "karan",
+  "description": "Model-inferred eye color claim fails but is downgraded to WARN (never blocks)",
+  "expectedDecision": "WARN",
+  "claims": [
+    {
+      "id": "face.identity",
+      "kind": "identity",
+      "severity": "block",
+      "source": "artist-declared",
+      "expect": { "minCosine": 0.82 }
+    },
+    {
+      "id": "trait.eye.colour",
+      "kind": "attribute",
+      "severity": "block",
+      "source": "model-inferred",
+      "expect": { "minConfidence": 0.75 }
+    }
+  ],
+  "observations": {
+    "face.identity": {
+      "verifier": "insightface/buffalo_l",
+      "confidence": 0.92,
+      "observed": "cosine 0.92 vs refs/karan_01.png"
+    },
+    "trait.eye.colour": {
+      "verifier": "gemini-3-flash/vision",
+      "confidence": 0.35,
+      "observed": "Eyes appear dark brown under dim lighting (expected grey-green)"
+    }
+  }
+}

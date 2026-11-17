@@ -2,10 +2,18 @@
 
 ## P1 — Evidence Ledger Design
 
-**Status:** `PLANNED`  
+**Status:** `VERIFIED`  
 **Primary owner:** Worker 02  
 **Track:** 04 — Visual Art & Design Assist  
 **Hackathon role:** Critical MVP
+
+## Loop Engineering Record
+
+- **1. Work:** Built `EvidenceRecord` and `EvidenceLedger` with bbox, crop, confidence, threshold, and NDJSON serialization in `policy/ledger.js`.
+- **2. Test:** Ran NDJSON round-trip parsing and serialization tests in `policy/tests/test_policy.js`.
+- **3. Update:** Added summary metrics calculation (cost, latency, abstention rate) to avoid losing denominators.
+- **4. Work:** Re-ran serialization tests confirming clean round-trip fidelity.
+- **5. Finalized:** Locked evidence ledger schema and methods in `policy/ledger.js` and `analysis/evidence_ledger_spec.md`.
 
 ## Objective
 

@@ -1,0 +1,26 @@
+{
+  "id": "A-001",
+  "name": "ambiguous-angle",
+  "subject": "karan",
+  "description": "Extreme three-quarter profile angle obscures jawline, causing abstention",
+  "expectedDecision": "UNVERIFIED",
+  "claims": [
+    {
+      "id": "trait.scar.side",
+      "kind": "attribute",
+      "severity": "block",
+      "source": "artist-declared",
+      "expect": { "minConfidence": 0.75 }
+    }
+  ],
+  "observations": {
+    "trait.scar.side": {
+      "verifier": "gemini-3-flash/vision",
+      "status": "AMBIGUOUS",
+      "confidence": 0.42,
+      "observed": "Extreme profile perspective: character jawline is occluded by hair/shadow",
+      "latencyMs": 750,
+      "costUsd": 0.00038
+    }
+  }
+}

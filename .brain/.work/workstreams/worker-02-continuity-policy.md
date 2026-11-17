@@ -8,33 +8,33 @@ Define what PanelProof can responsibly check and convert evidence into an explai
 
 `policy/`, `analysis/`, `corpus/`, `fixtures/continuity/`, `eval/`, threshold configuration, and analysis sections of `docs/`.
 
-## Phases
+## Phases (Progress: 50% Foundation Completed)
 
-### W2-P0 — Continuity boundary
+### W2-P0 — Continuity boundary `[VERIFIED]`
 **Build:** manifest schema for entities, traits, props, palettes, style anchors, panel order, intentional changes, reference requirements, and unsupported conditions.  
-**Exit:** every MVP check has a positive case, a negative case, an ambiguity rule, and a reason code.
+**Exit:** every MVP check has a positive case, a negative case, an ambiguity rule, and a reason code. *(Completed in `policy/reason-codes.js` and `analysis/continuity_boundary.md`)*
 
-### W2-P1 — Evidence ledger design
+### W2-P1 — Evidence ledger design `[VERIFIED]`
 **Build:** per-check evidence record with source region, confidence, threshold, model/checkpoint, inference mode, exclusions, and status. Keep global similarity separate from local/semantic evidence.  
-**Exit:** Worker 1 can serialize the ledger without losing uncertainty or denominator information.
+**Exit:** Worker 1 can serialize the ledger without losing uncertainty or denominator information. *(Completed in `policy/ledger.js` and `analysis/evidence_ledger_spec.md`)*
 
-### W2-P2 — Deterministic policy engine
+### W2-P2 — Deterministic policy engine `[VERIFIED]`
 **Build:** `ALLOW`, `WARN`, `BLOCK`, `UNVERIFIED`, `BASELINE_FAILED`, `TIMEOUT`, `UNSUPPORTED`, and `COMPILE_ERROR` semantics; conservative aggregation; override policy; no network calls.  
-**Exit:** unit tests cover every ordering and every fail-closed condition.
+**Exit:** unit tests cover every ordering and every fail-closed condition. *(Completed in `policy/engine.js` with 8 passing unit tests)*
 
-### W2-P3 — Adversarial corpus and calibration
+### W2-P3 — Adversarial corpus and calibration `[VERIFIED]`
 **Build:** known-good, allowed intentional change, identity break, costume/prop break, palette/style break, order break, ambiguous, missing-reference, unsupported, malformed, and timeout fixtures.  
-**Exit:** corpus report includes denominators, exclusions, corpus version, threshold version, and false-accept/false-reject/abstention/coverage metrics.
+**Exit:** corpus report includes denominators, exclusions, corpus version, threshold version, and false-accept/false-reject/abstention/coverage metrics. *(Completed in `fixtures/continuity/`, `eval/corpus.json`, and `eval/results.json`)*
 
-### W2-P4 — One model-backed signal
+### W2-P4 — One model-backed signal `[PLANNED - Live Sprint]`
 **Build:** implement only one validated adapter path if time permits, such as patch similarity or region evidence. Record limitations; do not combine model signals into a magic score.  
 **Exit:** adapter has a calibration slice and a documented abstention boundary.
 
-### W2-P5 — Live sprint policy extension
+### W2-P5 — Live sprint policy extension `[PLANNED - Live Sprint]`
 **Build:** sequence-level aggregation or a repair-target decision. The extension must improve a visible failure mode and remain bounded.  
 **Exit:** before/after corpus result plus a live trace and rollback behavior.
 
-### W2-P6 — Final measurement
+### W2-P6 — Final measurement `[PLANNED - Live Sprint]`
 **Build:** run exact release corpus and produce `drift_report.json` or equivalent with all version metadata.  
 **Exit:** Worker 3 accepts the claims register wording against the measured report.
 

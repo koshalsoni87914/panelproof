@@ -1,0 +1,39 @@
+{
+  "$schema": "panelproof/thresholds@1",
+  "version": "1.0.0",
+  "thresholds": {
+    "identity": {
+      "minCosine": 0.82,
+      "warnCosine": 0.85
+    },
+    "attribute": {
+      "minConfidence": 0.75,
+      "warnConfidence": 0.78
+    },
+    "palette": {
+      "deltaEMax": 8.0,
+      "deltaEWarn": 6.5
+    }
+  },
+  "verdictOrdering": [
+    "BLOCK",
+    "UNVERIFIED",
+    "WARN",
+    "ACCEPT"
+  ],
+  "policy": {
+    "onVerifierError": "UNVERIFIED",
+    "abstentionFailsGate": true,
+    "inferredClaimsMayBlock": false,
+    "overrideRequiresReason": true,
+    "exportRequires": {
+      "noBlock": true,
+      "noUnverified": true
+    },
+    "maxRepairAttempts": 2
+  },
+  "budget": {
+    "maxVerifyCostUsdPerPanel": 0.01,
+    "maxLatencyMs": 5000
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schema": "panelproof/eval-results@1",
+  "evaluatedAt": "2026-11-17T15:04:15.000Z",
+  "corpusVersion": "1.0.0",
+  "totalCases": 7,
+  "matchingCases": 7,
+  "accuracy": 1,
+  "wrongTraitRecall": 1,
+  "cleanPanelFalseBlockRate": 0,
+  "abstentionFidelity": 1,
+  "durationMs": 6,
+  "results": [
+    {
+      "id": "C-001",
+      "fixturePath": "fixtures/continuity/C-001-clean-panel.json",
+      "category": "clean",
+      "expected": "ACCEPT",
+      "actual": "ACCEPT",
+      "match": true,
+      "blockingClaims": [],
+      "unverifiedClaims": [],
+      "failClosed": false,
+      "canExport": true,
+      "continuityScore": 1
+    },
+    {
+      "id": "D-001",
+      "fixturePath": "fixtures/continuity/D-001-drifted-scar.json",
+      "category": "drift",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "match": true,
+      "blockingClaims": [
+        "trait.scar.side"
+      ],
+      "unverifiedClaims": [],
+      "failClosed": true,
+      "canExport": false,
+      "continuityScore": 0.5
+    },
+    {
+      "id": "E-001",
+      "fixturePath": "fixtures/continuity/E-001-verifier-unavailable.json",
+      "category": "fail-closed",
+      "expected": "UNVERIFIED",
+      "actual": "UNVERIFIED",
+      "match": true,
+      "blockingClaims": [],
+      "unverifiedClaims": [
+        "face.identity"
+      ],
+      "failClosed": true,
+      "canExport": false,
+      "continuityScore": 0
+    },
+    {
+      "id": "L-001",
+      "fixturePath": "fixtures/continuity/L-001-locked-face.json",
+      "category": "invariant",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "match": true,
+      "blockingClaims": [],
+      "unverifiedClaims": [],
+      "failClosed": true,
+      "canExport": false,
+      "continuityScore": 1
+    },
+    {
+      "id": "A-001",
+      "fixturePath": "fixtures/continuity/A-001-ambiguous-angle.json",
+      "category": "ambiguity",
+      "expected": "UNVERIFIED",
+      "actual": "UNVERIFIED",
+      "match": true,
+      "blockingClaims": [],
+      "unverifiedClaims": [
+        "trait.scar.side"
+      ],
+      "failClosed": true,
+      "canExport": false,
+      "continuityScore": 0
+    },
+    {
+      "id": "M-001",
+      "fixturePath": "fixtures/continuity/M-001-missing-reference.json",
+      "category": "missing-ref",
+      "expected": "UNVERIFIED",
+      "actual": "UNVERIFIED",
+      "match": true,
+      "blockingClaims": [],
+      "unverifiedClaims": [
+        "face.identity"
+      ],
+      "failClosed": true,
+      "canExport": false,
+      "continuityScore": 0
+    },
+    {
+      "id": "I-001",
+      "fixturePath": "fixtures/continuity/I-001-inferred-claim-fail.json",
+      "category": "provenance-guard",
+      "expected": "WARN",
+      "actual": "WARN",
+      "match": true,
+      "blockingClaims": [],
+      "unverifiedClaims": [],
+      "failClosed": false,
+      "canExport": true,
+      "continuityScore": 1
+    }
+  ]
+}

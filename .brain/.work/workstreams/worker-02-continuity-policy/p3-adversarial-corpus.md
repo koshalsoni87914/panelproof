@@ -2,10 +2,18 @@
 
 ## P3 — Adversarial Corpus and Fixture Labels
 
-**Status:** `PLANNED`  
+**Status:** `VERIFIED`  
 **Primary owner:** Worker 02  
 **Track:** 04 — Visual Art & Design Assist  
 **Hackathon role:** Critical MVP
+
+## Loop Engineering Record
+
+- **1. Work:** Created 7 adversarial fixtures in `fixtures/continuity/` (C-001, D-001, E-001, L-001, A-001, M-001, I-001) and defined `eval/corpus.json`.
+- **2. Test:** Ran evaluation runner `node eval/runner.js` across the 7 fixtures.
+- **3. Update:** Calibrated operating thresholds (`identityMinCosine: 0.82`, `attributeMinConfidence: 0.75`) in `policy/thresholds.json` and documented rationale in `analysis/threshold_calibration.md`.
+- **4. Work:** Re-ran `eval/runner.js` and confirmed 100% accuracy, 100% wrong-trait recall, 0% clean false block, and 100% abstention fidelity.
+- **5. Finalized:** Exported benchmark evidence to `eval/results.json`.
 
 ## Objective
 

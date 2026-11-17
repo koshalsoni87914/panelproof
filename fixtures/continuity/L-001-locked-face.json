@@ -1,0 +1,24 @@
+{
+  "id": "L-001",
+  "name": "locked-face-violation",
+  "subject": "karan",
+  "description": "Invariant assertion: child node modified pixels within a creator-locked coordinate box",
+  "expectedDecision": "BLOCK",
+  "lockedPixelDelta": 48,
+  "claims": [
+    {
+      "id": "face.identity",
+      "kind": "identity",
+      "severity": "block",
+      "source": "artist-declared",
+      "expect": { "minCosine": 0.82 }
+    }
+  ],
+  "observations": {
+    "face.identity": {
+      "verifier": "insightface/buffalo_l",
+      "confidence": 0.94,
+      "observed": "cosine 0.94 vs refs/karan_01.png"
+    }
+  }
+}
