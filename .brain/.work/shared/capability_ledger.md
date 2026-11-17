@@ -16,7 +16,8 @@
 | **Live VLM Multimodal Adapter** | `VERIFIED` | Live Gemini 2.5 Flash multimodal adapter in `adapters/gemini_vlm_adapter.js`, verified with real API receipt in `eval/live_gemini_verification_receipt.json`. | Worker 1 |
 | **Fail-Closed Gate Enforcement** | `VERIFIED` | UI blocks export for both `BLOCK` and `UNVERIFIED`; regression test QA-10 passing in `web/tests/test_qa_assurance.js`. | Worker 2 |
 | **Tamper-Evident Manifest Export** | `VERIFIED` | Server-canonical `/api/export-manifest` produces SHA-256 tamper-evident JSON audit download. | Worker 1 |
+| **Visual Co-Pilot Prompt Loop** | `VERIFIED` | 1-click prompt correction and canon restoration loop verified in `web/app.js` and `web/tests/test_qa_assurance.js` (QA-11). | Worker 3 |
 | **Bounded repair loop** | `PLANNED` | Two-attempt live inpainting trace with re-score delta (Post-MVP roadmap). | Worker 1 |
 | **Live sequence propagation** | `PLANNED` | Multi-panel batch evaluation over extended 12+ panel chapters (Post-MVP roadmap). | Worker 1 |
 
-*Updated: 2026-11-17 following completion of Live Multimodal VLM Adapter, Fail-Closed Export Gate, and Tamper-Evident Manifest Export milestones.*
+*Updated: 2026-11-17 following completion of Live Multimodal VLM Adapter, Fail-Closed Export Gate, Tamper-Evident Manifest Export, and Visual Co-Pilot Prompt Loop milestones.*

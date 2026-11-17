@@ -1,6 +1,6 @@
 # PanelProof
 
-> **Your characters can evolve. Your visual canon stays consistent.**  
+> **PanelProof is an AI continuity co-pilot for comic and storyboard artists that catches visual drift, explains what changed, and lets the artist decide what stays canonical.**  
 > *Track 04: Digital Art & Visual Co-Pilot*  
 > *Team: Prompt Pirates — GeNarrative Clash 2026*
 
@@ -8,9 +8,21 @@
 
 ## What is PanelProof?
 
-**PanelProof** is an evidence-first, fail-closed visual continuity copilot for comic, manga, storyboard, and sequential-art creators. It compares AI-generated panels against an artist-declared visual canon, reports which claims are supported or broken with visual bounding-box evidence, fails closed when evidence is missing or ambiguous, and keeps the artist in complete control of the publication export.
+**PanelProof** is a creative visual co-pilot designed specifically for comic, manga, webtoon, and storyboard artists. When creators generate story panels using diffusion or generative image models, character traits, scars, hair parts, and palettes inevitably drift across shots. 
 
-> *PanelProof is a fail-closed AI visual continuity copilot that detects character and style drift across comic, manga, and storyboard panels with evidence-backed verdicts.*
+PanelProof acts as an **independent visual co-pilot**: it compares generated panels against an artist-defined visual canon, highlights exact regions of drift with spatial bounding reticles, explains **what changed and why it matters**, suggests one-click corrective prompt tags, and keeps the human artist in full control of publication.
+
+---
+
+## Who PanelProof Helps
+
+PanelProof is tailored for sequential narrative visual artists:
+
+* **Comic & Manga Artists:** Generate drafts with Midjourney, Stable Diffusion, or FLUX while guaranteeing recurring facial scars, eye colors, and hairstyles never invert between close-ups and wide angles.
+* **Webtoon Creators:** Maintain rapid weekly release schedules without character costume drift or hair parting errors across hundreds of vertical scroll panels.
+* **Storyboard Artists & Animators:** Enforce shot-to-shot visual continuity and prop constancy between storyboard keyframes before sending sequences to production.
+* **Art Directors & Showrunners:** Establish an auditable, machine-verifiable single source of truth for character model sheets and review studio contractor submissions in minutes.
+* **Collaborative Creative Studios:** Share unified character visual canons across distributed teams with zero manual continuity oversight overhead.
 
 ---
 
@@ -37,24 +49,54 @@ Today, artists waste hours repeatedly re-prompting or manually fixing hallucinat
 
 ---
 
-## How PanelProof Works
+## Four-Layer Creative Co-Pilot Architecture
 
-PanelProof executes a strict, reproducible pipeline:
+PanelProof is architected around a human-in-the-loop, evidence-based co-pilot pipeline:
 
 ```mermaid
 flowchart TD
-    A["Artist Canon Manifest\n(Claims, Refs, Anchors)"] --> B["Panel Ingestion\n(Target Panel Frame)"]
-    B --> C["Evidence Adapters\n(Face Cosine, Trait VLM, Palette ΔE, Pixel Lock)"]
-    C --> D["Continuous Evidence Ledger\n(NDJSON Records + Bboxes + Crops)"]
-    D --> E["Deterministic Policy Engine\n(worstAction: BLOCK > UNVERIFIED > WARN > ACCEPT)"]
-    E --> F{"Gate Decision"}
-    F -->|"Kept (ACCEPT)"| G["Export Sequence Permitted"]
-    F -->|"Check This (WARN)"| G
-    F -->|"Broke Canon (BLOCK)"| H["Export Blocked\n(Explainable Evidence Card)"]
-    F -->|"Needs Call (UNVERIFIED)"| H
-    H --> I["Artist Review Bench UI"]
-    I -->|"Editorial Justification"| J["Tamper-Evident Creator Override"]
-    J --> G
+    subgraph L1["1. CREATOR LAYER (Input)"]
+        A["Artist Canon Model Sheet\n(Karan Baseline: Left-Jaw Scar)"]
+        B["Target Generated Panel Frame\n(Diffusion / VLM Output)"]
+    end
+
+    subgraph L2["2. AI CO-PILOT LAYER (Inference)"]
+        C["Gemini 2.5 Flash Multimodal VLM\n(Laterality & Attribute Detection)"]
+        D["Face Cosine & Palette Adapters\n(InsightFace + DeltaE)"]
+        E["Pixel Lock Invariant Gate\n(Delta = 0 Check)"]
+    end
+
+    subgraph L3["3. TRUST LAYER (Deterministic Policy)"]
+        F["Continuous Evidence Ledger\n(SHA-256 Hashes, Bboxes, Latency)"]
+        G["Deterministic Policy Engine\n(BLOCK > UNVERIFIED > WARN > ACCEPT)"]
+    end
+
+    subgraph L4["4. HUMAN DECISION LAYER (Review Bench)"]
+        H{"Continuity Verdict"}
+        I["Kept (ALLOW)\nExport Permitted"]
+        J["Canon Conflict (BLOCK)\nCreator Intent Guidance"]
+        K["One-Click Prompt Correction Loop\n(Restore Canon & Re-verify)"]
+        L["Approve Intentional Variation\n(Editorial Override Recorded)"]
+        M["Download Tamper-Evident Audit Manifest"]
+    end
+
+    A --> C
+    B --> C
+    A --> D
+    B --> D
+    B --> E
+    C --> F
+    D --> F
+    E --> F
+    F --> G
+    G --> H
+    H -->|"Clean Match"| I
+    H -->|"Drift Detected"| J
+    J -->|"Apply Tag"| K
+    K -->|"Regenerate / Restore"| I
+    J -->|"Artistic Reason"| L
+    L --> I
+    I --> M
 ```
 
 ### Core Invariants & Policy Semantics
@@ -67,20 +109,24 @@ flowchart TD
 
 ---
 
-## Interactive Demo Flow
+## Interactive Demo Flow: The Visual Co-Pilot Loop
 
 The Creator Review Bench guides artists through four essential narrative inspection acts:
 
-1. **Act 1: Clean Baseline Panel (`C-001`) &rarr; `Kept` (`ACCEPT`)**  
-   All 4 declared checks pass. Face cosine similarity $0.93 \ge 0.82$, left-jaw scar verified, and palette $\Delta E \le 8.0$.
-2. **Act 2: Deliberate Drift (`D-001`) &rarr; `Broke canon` (`BLOCK`)**  
-   Adversarial test: scar erroneously flips to the character's RIGHT jaw. The engine catches the laterality inversion (confidence $0.34 < 0.75$), highlights the face crop bounding box, blocks export, and provides corrective prompting guidance.
-3. **Act 3: Network / Verifier Timeout (`E-001`) &rarr; `Needs your call` (`UNVERIFIED`)**  
+1. **Act 1: Clean Baseline Panel (`C-001`) &rarr; `Kept` (`ALLOW`)**  
+   All 4 declared checks pass. Face cosine similarity $0.93 \ge 0.82$, left-jaw scar verified, and palette $\Delta E \le 8.0$. Status shows `Kept`; publication export is unlocked.
+2. **Act 2: Laterality Drift & One-Click Prompt Correction Loop (`D-001`) &rarr; `Broke canon` (`BLOCK`)**  
+   Adversarial test: scar erroneously flips to the character's RIGHT jaw.
+   * **What changed?** Scar appears on character's RIGHT jaw instead of LEFT jaw.
+   * **Why it matters?** Inverts canon established in reference sheet.
+   * **What can you do?** Click **"Apply Suggested Correction & Re-verify"** to inject `'portrait of Karan, vertical scar on character LEFT jaw'`. Target render updates live, facial scar is verified on left jaw, verdict flips to `Kept`, and export unlocks!
+   * Alternatively, click **"Approve Intentional Variation"** to record an artistic justification (e.g. mirror reflection or alternate timeline disguise) into the tamper-evident audit ledger.
+3. **Act 3: Remote Verifier Timeout (`E-001`) &rarr; `Needs your call` (`UNVERIFIED`)**  
    Simulated verifier timeout after 3000ms. Rather than silently passing an unverified image, the engine fails closed to prevent unverified publication.
 4. **Act 4: Locked Region Invariant (`L-001`) &rarr; `Broke canon` (`BLOCK`)**  
-   Costume edit accidentally mutated 142 background pixels in a designated static zone. The invariant check flags `LOCKED_PIXELS_VIOLATED`.
-5. **Creator Override Protocol:**  
-   Artists can provide an editorial justification (e.g. dramatic lighting silhouette or story progression injury) to override non-invariant flags. The override is recorded into the tamper-evident audit ledger while preserving machine ground truth.
+   Costume edit accidentally mutated 142 background pixels in a designated static zone. The invariant check flags `LOCKED_PIXELS_VIOLATED` (strictly non-overridable).
+5. **Act 5: Tamper-Evident Publication Export**  
+   Exports a verifiable JSON manifest (`panelproof-audit-manifest.json`) containing cryptographic SHA-256 Merkle hashes of input image frames, bounding boxes, latency records, and any signed creator overrides.
 
 ---
 

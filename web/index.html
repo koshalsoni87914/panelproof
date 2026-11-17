@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PanelProof — Creator Review Bench &bull; Comic Atelier Studio</title>
+  <title>PanelProof — AI Continuity Co-Pilot for Comic &amp; Storyboard Artists</title>
   
   <!-- High-Craft Google Fonts Typography Stack -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,8 +20,8 @@
         <span class="brand-glyph">P²</span>
       </div>
       <div class="brand-text">
-        <h1>PanelProof <span class="brand-version-badge">v1.0.0-rc</span></h1>
-        <div class="brand-tagline">Prompt Pirates &bull; Track 04 / Digital Art &amp; Visual Co-Pilot</div>
+        <h1>PanelProof <span class="brand-version-badge">Theme 04 &bull; Creative Co-Pilot</span></h1>
+        <div class="brand-tagline">Visual Continuity &amp; Canon Assistant for Comic, Manga &amp; Storyboard Artists</div>
       </div>
     </div>
 
@@ -49,7 +49,7 @@
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
         </svg>
-        Live Multimodal Studio
+        Live Co-Pilot Studio
       </button>
       <button class="mode-tab" id="tabModeOffline" title="6-Panel Deterministic Evaluation Replay">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -61,7 +61,7 @@
     </div>
 
     <div class="workbench-group">
-      <span class="workbench-label">Active Verifier:</span>
+      <span class="workbench-label">Continuity Assistant:</span>
       <span class="meta-chip" id="activeVerifierPill" style="color:#38bdf8; border-color:rgba(56,189,248,0.3);">
         <span class="pulse-indicator" style="width:6px; height:6px; display:inline-block; margin-right:4px;"></span>
         Gemini 2.5 Flash Multimodal
@@ -78,24 +78,24 @@
     <div class="live-studio-workbench" id="liveStudioWorkbench">
       <div class="workbench-row">
         <div class="workbench-group">
-          <span class="workbench-label">Judge Presets:</span>
+          <span class="workbench-label">Creator Presets:</span>
           <button class="preset-chip-btn active" id="presetClean" data-preset="clean" title="Evaluate canonical match (scar left jaw)">
-            ✓ Preset 1: Clean Match
+            ✓ Preset 1: Clean Character Match
           </button>
           <button class="preset-chip-btn" id="presetDrift" data-preset="drift" title="Evaluate laterality drift (scar inverted to right jaw)">
-            ✗ Preset 2: Drifted Scar (Right Jaw)
+            ✗ Preset 2: Laterality Drift (Scar Right Jaw)
           </button>
           <button class="preset-chip-btn" id="presetTimeout" data-preset="timeout" title="Simulate verifier network timeout (fail-closed)">
-            ⏱ Preset 3: Remote Timeout (Fail-Closed)
+            ⏱ Preset 3: Network Timeout (Fail-Closed)
           </button>
           <button class="preset-chip-btn" id="presetCustom" data-preset="custom" title="Upload custom reference and target image files">
-            📁 Preset 4: Custom Upload
+            📁 Preset 4: Custom Image Upload
           </button>
         </div>
 
         <div class="workbench-group">
           <input type="file" id="inputRefFile" class="file-input-hidden" accept="image/*">
-          <label for="inputRefFile" class="btn-upload-file" title="Upload Canonical Reference Sheet (PNG/JPG)">
+          <label for="inputRefFile" class="btn-upload-file" title="Upload Canonical Reference Model Sheet (PNG/JPG)">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path>
             </svg>
@@ -114,7 +114,7 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
             </svg>
-            Run Live Multimodal Verification
+            Check Visual Continuity
           </button>
         </div>
       </div>
@@ -124,13 +124,13 @@
     <div id="sequenceStripRow">
       <div class="strip-topbar" style="margin-top: 8px;">
         <div class="strip-title-group">
-          <span class="strip-caption">01 // Light Table</span>
+          <span class="strip-caption">01 // Story Light Table</span>
           <h2 class="strip-chapter-title">Sequence Strip: Chapter 04 &mdash; The Alley Encounter</h2>
         </div>
         <div class="strip-meta-pills">
           <span class="meta-chip" id="stripMetrics">Auditing 6 Panels</span>
           <span class="meta-chip">Hotkeys: [1]–[6]</span>
-          <span class="meta-chip">Fail-Closed Policy</span>
+          <span class="meta-chip">Human-in-the-Loop</span>
         </div>
       </div>
 
@@ -142,7 +142,7 @@
     <!-- Canonical Reference Summary Bar -->
     <div class="canon-banner-card">
       <div class="canon-banner-left">
-        <span class="canon-badge">Declared Canon (Karan)</span>
+        <span class="canon-badge">Artist-Declared Canon (Karan)</span>
         <div class="canon-chips-row">
           <span class="canon-chip-item"><strong>Face:</strong> Ref Sheet</span>
           <span class="canon-chip-item"><strong>Trait:</strong> Scar on LEFT jaw</span>
@@ -151,7 +151,7 @@
           <span class="canon-chip-item"><strong>Palette:</strong> House Swatch (&Delta;E &le; 8.0)</span>
         </div>
       </div>
-      <span class="canon-provenance-tag">Signed by Art Director &bull; Sheet Hash: 9d4f...a0</span>
+      <span class="canon-provenance-tag">Declared by Creator &bull; Canon Hash: 9d4f...a0</span>
     </div>
   </div>
 
@@ -163,7 +163,7 @@
         <div class="studio-header">
           <div class="studio-title-area">
             <span class="studio-title" id="studioTitle">Panel Inspection</span>
-            <span class="studio-subtitle">Draftsman Loupe &bull; Side-by-Side Invariant Inspection</span>
+            <span class="studio-subtitle">Draftsman Loupe &bull; Side-by-Side Visual Canon Comparison</span>
           </div>
           <div class="viewport-toggles">
             <button class="btn-view-toggle active" id="btnToggleBbox" title="Toggle Bounding Boxes [B]">Bounding Boxes [B]</button>
@@ -175,7 +175,7 @@
           <!-- Reference Frame -->
           <div class="image-frame">
             <div class="image-label-row">
-              <span class="frame-label">Canonical Reference Sheet</span>
+              <span class="frame-label">Canonical Model Sheet</span>
               <span id="refSubjectBadge" class="meta-chip">Karan (Canon)</span>
             </div>
             <div class="canvas-wrapper">
@@ -205,14 +205,14 @@
           <div class="meta-group">
             <span id="imageMetaHash">SHA256: 8f9b2...e1</span>
             <button class="btn-copy-hash" id="btnCopyHash" title="Click to copy hash">Copy Hash</button>
-            <span id="fixtureMetaInfo">Fixture: C-001 | Corpus: v1.0.0 | Policy: v1.0.0</span>
+            <span id="fixtureMetaInfo">Fixture: C-001 | Engine: vlm/gemini-2.5-flash@1</span>
           </div>
           <span id="panelContinuityBadge" style="color:#38bdf8; font-weight:bold;">Continuity: 100%</span>
         </div>
       </div>
     </section>
 
-    <!-- Right Column: Evidence & Policy Decision Engine -->
+    <!-- Right Column: Visual Continuity & Creator Co-Pilot -->
     <section class="policy-column">
       <!-- Verdict Banner -->
       <div class="verdict-banner banner-allow" id="verdictBanner">
@@ -222,11 +222,53 @@
             <span class="status-pill status-allow" id="bannerStatusPill">ALLOW</span>
             <strong class="verdict-code" id="bannerReasonCode">ACCEPT_PASSED</strong>
           </div>
-          <button class="btn-tactile" id="btnOpenOverride">Record Creator Override [O]</button>
+          <button class="btn-tactile" id="btnOpenOverride">Approve Intentional Variation [O]</button>
         </div>
-        <p class="verdict-summary" id="bannerSummary">All declared character traits and style constraints verified.</p>
+        <p class="verdict-summary" id="bannerSummary">All declared character traits and style constraints match canonical model sheet.</p>
+
+        <!-- Creator Intent & Visual Co-Pilot Guidance Box -->
+        <div id="creatorIntentCard" class="creator-intent-card" style="display:none;">
+          <div class="intent-header">
+            <span class="intent-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+              </svg>
+              Creator Co-Pilot Guidance
+            </span>
+            <span class="intent-chip" id="intentStatusChip">Canon Conflict Detected</span>
+          </div>
+
+          <div class="intent-body">
+            <div class="intent-item">
+              <span class="intent-q">What changed?</span>
+              <span class="intent-a" id="intentWhatChanged">Scar appears on character's RIGHT jaw instead of LEFT jaw.</span>
+            </div>
+            <div class="intent-item">
+              <span class="intent-q">Why it matters?</span>
+              <span class="intent-a" id="intentWhyItMatters">This contradicts the canonical artist sheet for Karan (scar laterality inverted).</span>
+            </div>
+            <div class="intent-item">
+              <span class="intent-q">What can you do?</span>
+              <span class="intent-a" id="intentWhatCanYouDo">Regenerate with corrected prompt tag, repair localized region, or approve as an intentional variation (e.g. mirror reflection or alternate timeline disguise).</span>
+            </div>
+          </div>
+
+          <!-- One-Click Visual Correction Path -->
+          <div class="intent-actions" id="intentActionsRow">
+            <button id="btnApplyPromptCorrection" class="btn-tactile btn-primary-action" style="padding:6px 14px; font-size:11px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 4v6h-6M1 20v-6h6"></path>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+              </svg>
+              Apply Suggested Correction &amp; Re-verify
+            </button>
+            <button id="btnIntentApprove" class="btn-tactile" style="padding:6px 14px; font-size:11px;">
+              Approve Intentional Variation [O]
+            </button>
+          </div>
+        </div>
         
-        <!-- Detailed Drift / Failure Breakdown Box -->
+        <!-- Detailed Diagnostic Breakdown Box -->
         <div id="driftDetailsBox" class="drift-diagnostic-card" style="display:none;">
           <div class="drift-row">
             <span class="drift-label">Claim:</span>
@@ -254,7 +296,7 @@
       <!-- Evidence Breakdown Cards -->
       <div class="evidence-section">
         <div class="evidence-header">
-          <span class="evidence-title">Continuous Evidence Ledger</span>
+          <span class="evidence-title">Audited Continuity Traits &amp; Bounding Boxes</span>
           <span class="evidence-count" id="evidenceCount">4 Traits Evaluated</span>
         </div>
         <div class="evidence-list" id="evidenceList">
@@ -264,16 +306,16 @@
     </section>
   </main>
 
-  <!-- Creator Override Modal -->
+  <!-- Creator Intent & Override Modal -->
   <div class="modal-overlay" id="overrideModal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title">Record Creator Override</h3>
+        <h3 class="modal-title">Approve Intentional Artistic Variation</h3>
         <button class="modal-close" id="btnCloseModal" title="Close modal [Esc]">&times;</button>
       </div>
 
       <div class="modal-alert" id="overrideAlert">
-        Overrides are recorded to the tamper-evident audit ledger with SHA-256 integrity hashes. Pixel invariant violations cannot be overridden.
+        Overrides are recorded to the tamper-evident audit ledger with visual evidence hashes. Pixel invariant violations cannot be overridden.
       </div>
 
       <div class="form-group">
@@ -288,12 +330,12 @@
 
       <div class="form-group">
         <label class="form-label" for="overrideText">Specific Editorial Explanation (Required)</label>
-        <textarea class="form-textarea" id="overrideText" placeholder="Explain why this deviation is intentional and preserves creative intent..."></textarea>
+        <textarea class="form-textarea" id="overrideText" placeholder="Explain why this deviation is intentional and preserves creative intent (e.g. mirror reflection, disguised character)..."></textarea>
       </div>
 
       <div class="modal-actions">
         <button class="btn-tactile" id="btnCancelOverride">Cancel</button>
-        <button class="btn-tactile btn-primary-action" id="btnConfirmOverride">Record Override to Ledger</button>
+        <button class="btn-tactile btn-primary-action" id="btnConfirmOverride">Confirm &amp; Record to Ledger</button>
       </div>
     </div>
   </div>
@@ -304,12 +346,12 @@
   <!-- Atelier Studio Footer -->
   <footer class="studio-footer">
     <div class="footer-left">
-      <span>PanelProof Studio Engine &bull; Track 04 Prompt Pirates</span>
+      <span>PanelProof Creative Co-Pilot &bull; Track 04 Prompt Pirates</span>
       <span class="meta-chip">Corpus v1.0.0</span>
-      <span class="meta-chip">Ledger: SHA-256 Chained</span>
+      <span class="meta-chip">Tamper-Evident SHA-256</span>
     </div>
     <div class="footer-right">
-      <span>Shortcuts: <kbd>[1–6]</kbd> Panel &bull; <kbd>[B]</kbd> BBox &bull; <kbd>[M]</kbd> Mask &bull; <kbd>[O]</kbd> Override &bull; <kbd>[Esc]</kbd> Dismiss</span>
+      <span>Shortcuts: <kbd>[1–6]</kbd> Panel &bull; <kbd>[B]</kbd> BBox &bull; <kbd>[M]</kbd> Mask &bull; <kbd>[O]</kbd> Approve Variation &bull; <kbd>[Esc]</kbd> Dismiss</span>
     </div>
   </footer>
 

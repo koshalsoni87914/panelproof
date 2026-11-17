@@ -1405,3 +1405,87 @@ footer.studio-footer {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+
+/* ==========================================================================
+   Creator Intent & Co-Pilot Action Card (Theme 04 Focus)
+   ========================================================================== */
+
+.creator-intent-card {
+  background: linear-gradient(180deg, #18233a 0%, #101827 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-left: 4px solid #38bdf8;
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 12px;
+  transition: all var(--transition-normal);
+}
+
+.intent-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 8px;
+}
+
+.intent-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-pure);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.intent-chip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: #f43f5e;
+  background: rgba(244, 63, 94, 0.12);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+.intent-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.intent-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.intent-q {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #38bdf8;
+}
+
+.intent-a {
+  color: var(--text-main);
+}
+
+.intent-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
