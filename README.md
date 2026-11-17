@@ -1,4 +1,4 @@
-﻿# PanelProof
+# PanelProof
 
 > **Your characters can evolve. Your visual canon stays consistent.**  
 > *Track 04: Digital Art & Visual Co-Pilot*  
@@ -194,7 +194,11 @@ npm run audit:fixtures
 
 ### 4. Launch Creator Review Bench (Interactive Demo)
 ```bash
+# Via npm script:
 npm run demo
+
+# Or on Windows (1-click launcher):
+run_demo.bat
 ```
 *Runs the fixture audit and starts the local review server at **`http://localhost:3000`**.*
 
