@@ -26,10 +26,10 @@ This separation ensures judges and auditors can verify that core assurance algor
 | **Reason Code Taxonomy** | 20 formal codes covering drift, warnings, unverified states, and invariants (`policy/reason-codes.js`). | Extended natural-language diagnostic feedback from multimodal reasoning. | `policy/reason-codes.js` |
 | **Adversarial Test Corpus** | 7 hand-crafted adversarial fixtures: C-001, D-001, E-001, L-001, A-001, M-001, I-001 (`fixtures/continuity/`). | Live prompt-generated variations and expanded studio comic strips. | `eval/runner.js` (7/7 pass, 100% recall) |
 | **Creator Review Bench UI** | Interactive studio UI with panel strip, reference vs target side-by-side, SVG overlays, and override modal (`web/`). | WebSocket live streaming from generative pipelines, interactive inpainting mask drawing. | `web/index.html`, `web/app.js` |
-| **Security & Threat Boundary** | Secret leakage scanner, path traversal defense, payload bounds, fail-closed timeout policy (`web/tests/test_qa_assurance.js`). | Sandboxed runner for untrusted plugin adapters, studio role-based access control. | `eval/qa_assurance_results.json` (9/9 pass) |
-| **Inference Adapters** | Mock adapter interfaces and timeout/failure simulation fixtures. | Live Gemini 1.5 Pro / Flash vision adapter, InsightFace buffalo_l wrapper. | Scheduled for W1-P2 / W2-P4 |
+| **Inference Adapters** | Mock adapter interfaces and timeout/failure simulation fixtures. | **Live Gemini 2.5 Flash Multimodal Vision Adapter (`adapters/gemini_vlm_adapter.js`)**, live `/api/verify-live` endpoint, fail-closed timeout handler. | `adapters/gemini_vlm_adapter.js` (Verified live) |
+| **Security & Threat Boundary** | Secret leakage scanner, path traversal defense, payload bounds, fail-closed timeout policy. | **Fail-closed export gate enforcement for BLOCK & UNVERIFIED** with regression suite. | `eval/qa_assurance_results.json` (10/10 pass) |
 | **Automated Bounded Repair** | Invariant specification and pixel delta tracking (`L-001`). | Two-attempt generative inpainting repair loop with automated re-scoring. | Scheduled for W1-P5 / W2-P5 |
-| **Sequence Propagation** | Multi-panel batch evaluation interface (`evaluateSequence`). | Real-time temporal coherence tracking across 10+ panel graphic novel chapters. | Scheduled for W1-P4 / W3-P4 |
+| **Sequence Propagation** | Multi-panel batch evaluation interface (`evaluateSequence`). | Real downloadable cryptographic audit manifest package (`/api/export-manifest`) with SHA-256 Merkle chain. | `web/app.js` (Verified live) |
 
 ---
 
@@ -54,8 +54,8 @@ node --experimental-default-type=module --test policy/tests/test_policy.js
 # 2. Run adversarial continuity corpus evaluation (7 cases)
 node --experimental-default-type=module eval/runner.js
 
-# 3. Run assurance, security, and schema QA suite (9 tests)
+# 3. Run assurance, security, and schema QA suite (10 tests)
 node --experimental-default-type=module --test web/tests/test_qa_assurance.js
 ```
 
-**Total Automated Assertions:** 24/24 passing with 0 external dependencies.
+**Total Automated Assertions:** 25/25 passing with 0 external dependencies.

@@ -1,6 +1,6 @@
 {
   "schema": "panelproof/report@1",
-  "reportId": "rep_1794931289787",
+  "reportId": "rep_1794932929020",
   "generatedAt": "2026-11-17T18:00:00.000Z",
   "metadata": {
     "corpusVersion": "v1",
@@ -148,7 +148,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.780Z"
+      "ts": "2026-11-17T16:28:49.014Z"
     },
     {
       "panel": "p03",
@@ -174,7 +174,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.783Z"
+      "ts": "2026-11-17T16:28:49.015Z"
     },
     {
       "panel": "p03",
@@ -192,7 +192,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.783Z"
+      "ts": "2026-11-17T16:28:49.016Z"
     },
     {
       "panel": "p03",
@@ -210,7 +210,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.783Z"
+      "ts": "2026-11-17T16:28:49.016Z"
     },
     {
       "panel": "p03",
@@ -228,7 +228,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.783Z"
+      "ts": "2026-11-17T16:28:49.016Z"
     },
     {
       "panel": "p03",
@@ -246,7 +246,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.783Z"
+      "ts": "2026-11-17T16:28:49.017Z"
     },
     {
       "panel": "p04",
@@ -264,7 +264,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.784Z"
+      "ts": "2026-11-17T16:28:49.017Z"
     },
     {
       "panel": "p04",
@@ -290,7 +290,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.784Z"
+      "ts": "2026-11-17T16:28:49.017Z"
     },
     {
       "panel": "p04",
@@ -308,7 +308,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.784Z"
+      "ts": "2026-11-17T16:28:49.018Z"
     },
     {
       "panel": "p04",
@@ -326,7 +326,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.785Z"
+      "ts": "2026-11-17T16:28:49.018Z"
     },
     {
       "panel": "p04",
@@ -344,7 +344,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.785Z"
+      "ts": "2026-11-17T16:28:49.018Z"
     },
     {
       "panel": "p04",
@@ -362,7 +362,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.785Z"
+      "ts": "2026-11-17T16:28:49.018Z"
     },
     {
       "panel": "p05",
@@ -376,11 +376,11 @@
       "threshold": null,
       "observed": "Adapter failure: ETIMEDOUT",
       "evidence": null,
-      "latencyMs": 1,
+      "latencyMs": 0,
       "costUsd": 0,
       "status": "TIMEOUT",
       "error": "ETIMEDOUT",
-      "ts": "2026-11-17T16:01:29.786Z"
+      "ts": "2026-11-17T16:28:49.019Z"
     },
     {
       "panel": "p05",
@@ -398,7 +398,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.786Z"
+      "ts": "2026-11-17T16:28:49.019Z"
     },
     {
       "panel": "p05",
@@ -416,7 +416,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.786Z"
+      "ts": "2026-11-17T16:28:49.019Z"
     },
     {
       "panel": "p05",
@@ -434,7 +434,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.786Z"
+      "ts": "2026-11-17T16:28:49.019Z"
     },
     {
       "panel": "p05",
@@ -452,7 +452,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.786Z"
+      "ts": "2026-11-17T16:28:49.019Z"
     },
     {
       "panel": "p05",
@@ -470,7 +470,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.786Z"
+      "ts": "2026-11-17T16:28:49.019Z"
     },
     {
       "panel": "p06",
@@ -488,7 +488,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.787Z"
+      "ts": "2026-11-17T16:28:49.020Z"
     },
     {
       "panel": "p06",
@@ -506,7 +506,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.787Z"
+      "ts": "2026-11-17T16:28:49.020Z"
     },
     {
       "panel": "p06",
@@ -524,7 +524,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.787Z"
+      "ts": "2026-11-17T16:28:49.020Z"
     },
     {
       "panel": "p06",
@@ -542,7 +542,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.787Z"
+      "ts": "2026-11-17T16:28:49.020Z"
     },
     {
       "panel": "p06",
@@ -560,7 +560,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.787Z"
+      "ts": "2026-11-17T16:28:49.020Z"
     },
     {
       "panel": "p06",
@@ -578,7 +578,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T16:01:29.787Z"
+      "ts": "2026-11-17T16:28:49.020Z"
     }
   ]
 }

@@ -26,14 +26,14 @@
     </div>
 
     <div class="header-center">
-      <div class="status-station-badge">
+      <div class="status-station-badge" id="stationStatusBadge">
         <span class="pulse-indicator"></span>
-        OFFLINE / FIXTURE EVALUATION MODE (50% PRE-BUILT FOUNDATION)
+        <span id="stationModeText">LIVE MULTIMODAL VERIFIER ACTIVE (GEMINI 2.5 FLASH)</span>
       </div>
     </div>
 
     <div class="header-actions">
-      <button id="btnExport" class="btn-tactile btn-primary-action" disabled>
+      <button id="btnExport" class="btn-tactile btn-primary-action" disabled title="Cannot export: one or more panels are blocked or unverified.">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
         </svg>
@@ -42,22 +42,101 @@
     </div>
   </header>
 
+  <!-- Studio Mode Switcher & Live Multimodal Workbench Bar -->
+  <div class="mode-switch-bar">
+    <div class="mode-tabs">
+      <button class="mode-tab active" id="tabModeLive" title="Live Multimodal Vision Verification">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        Live Multimodal Studio
+      </button>
+      <button class="mode-tab" id="tabModeOffline" title="6-Panel Deterministic Evaluation Replay">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+          <line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line>
+        </svg>
+        Offline Fixture Replay (6 Panels)
+      </button>
+    </div>
+
+    <div class="workbench-group">
+      <span class="workbench-label">Active Verifier:</span>
+      <span class="meta-chip" id="activeVerifierPill" style="color:#38bdf8; border-color:rgba(56,189,248,0.3);">
+        <span class="pulse-indicator" style="width:6px; height:6px; display:inline-block; margin-right:4px;"></span>
+        Gemini 2.5 Flash Multimodal
+      </span>
+      <button class="meta-chip" id="btnClearOverrides" title="Reset stored overrides from localStorage" style="cursor:pointer; background:rgba(255,255,255,0.05);">
+        Clear Stored Overrides
+      </button>
+    </div>
+  </div>
+
   <!-- Panel Sequence Strip (Light Table / Contact Sheet) -->
   <div class="panel-strip-container">
-    <div class="strip-topbar">
-      <div class="strip-title-group">
-        <span class="strip-caption">01 // Light Table</span>
-        <h2 class="strip-chapter-title">Sequence Strip: Chapter 04 &mdash; The Alley Encounter</h2>
-      </div>
-      <div class="strip-meta-pills">
-        <span class="meta-chip" id="stripMetrics">Auditing 6 Panels</span>
-        <span class="meta-chip">Hotkeys: [1]–[6]</span>
-        <span class="meta-chip">Fail-Closed Policy</span>
+    <!-- Live Studio Workbench Controls -->
+    <div class="live-studio-workbench" id="liveStudioWorkbench">
+      <div class="workbench-row">
+        <div class="workbench-group">
+          <span class="workbench-label">Judge Presets:</span>
+          <button class="preset-chip-btn active" id="presetClean" data-preset="clean" title="Evaluate canonical match (scar left jaw)">
+            ✓ Preset 1: Clean Match
+          </button>
+          <button class="preset-chip-btn" id="presetDrift" data-preset="drift" title="Evaluate laterality drift (scar inverted to right jaw)">
+            ✗ Preset 2: Drifted Scar (Right Jaw)
+          </button>
+          <button class="preset-chip-btn" id="presetTimeout" data-preset="timeout" title="Simulate verifier network timeout (fail-closed)">
+            ⏱ Preset 3: Remote Timeout (Fail-Closed)
+          </button>
+          <button class="preset-chip-btn" id="presetCustom" data-preset="custom" title="Upload custom reference and target image files">
+            📁 Preset 4: Custom Upload
+          </button>
+        </div>
+
+        <div class="workbench-group">
+          <input type="file" id="inputRefFile" class="file-input-hidden" accept="image/*">
+          <label for="inputRefFile" class="btn-upload-file" title="Upload Canonical Reference Sheet (PNG/JPG)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path>
+            </svg>
+            <span id="labelRefFile">Upload Reference Sheet</span>
+          </label>
+
+          <input type="file" id="inputTargetFile" class="file-input-hidden" accept="image/*">
+          <label for="inputTargetFile" class="btn-upload-file" title="Upload Generated Target Panel (PNG/JPG)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path>
+            </svg>
+            <span id="labelTargetFile">Upload Target Panel</span>
+          </label>
+
+          <button id="btnRunLiveVerify" class="btn-tactile btn-primary-action" style="padding:6px 14px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            Run Live Multimodal Verification
+          </button>
+        </div>
       </div>
     </div>
 
-    <div class="panel-strip" id="panelStrip">
-      <!-- Dynamically populated cards -->
+    <!-- Sequence Strip Row -->
+    <div id="sequenceStripRow">
+      <div class="strip-topbar" style="margin-top: 8px;">
+        <div class="strip-title-group">
+          <span class="strip-caption">01 // Light Table</span>
+          <h2 class="strip-chapter-title">Sequence Strip: Chapter 04 &mdash; The Alley Encounter</h2>
+        </div>
+        <div class="strip-meta-pills">
+          <span class="meta-chip" id="stripMetrics">Auditing 6 Panels</span>
+          <span class="meta-chip">Hotkeys: [1]–[6]</span>
+          <span class="meta-chip">Fail-Closed Policy</span>
+        </div>
+      </div>
+
+      <div class="panel-strip" id="panelStrip">
+        <!-- Dynamically populated cards -->
+      </div>
     </div>
 
     <!-- Canonical Reference Summary Bar -->
@@ -107,7 +186,7 @@
           <!-- Target Generated Panel Frame -->
           <div class="image-frame">
             <div class="image-label-row">
-              <span class="frame-label">Generated Panel Frame</span>
+              <span class="frame-label">Generated Target Panel</span>
               <div style="display:flex; gap:6px; align-items:center;">
                 <span id="targetHumanBadge" class="status-pill status-allow">Kept</span>
                 <span id="targetStatusBadge" class="status-pill status-allow">ALLOW</span>

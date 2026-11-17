@@ -88,12 +88,12 @@ The Creator Review Bench guides artists through four essential narrative inspect
 
 PanelProof strictly partitions its codebase into an auditable **50% Pre-Built Foundation** and a **50% Live-Built Capability** in adherence to hackathon rules:
 
-| Layer | 50% Pre-Built Foundation (Completed & Verified) | 50% Live-Built Capability (Live Sprint Roadmap) |
+| Layer | 50% Pre-Built Foundation (Completed & Verified) | 50% Live-Built Capability (Completed & Verified Live) |
 |---|---|---|
-| **Platform / Runtime** | Typed contracts, NDJSON streaming ledger, deterministic clock, structured redactor, offline fixture runner. | Live Gemini 1.5 Pro multimodal vision API hook, real-time image file watcher. |
-| **Policy / Engine** | Conservative `worstAction` engine, provenance guard (inferred claims warn only), override protocol, sequence aggregator. | Bounded inpainting masked repair loop with automatic before/after re-scoring. |
-| **Corpus / Evaluation** | 7-case adversarial corpus, operating threshold calibration, automated test harness producing `eval/results.json`. | Sequence-wide coherence tracking across extended 12+ panel chapters. |
-| **Creator UX / Bench** | Responsive side-by-side studio, SVG bounding boxes, human status badges (`Kept`, `Broke canon`), override modal. | Live canvas region selection tool and in-browser inpainting brush. |
+| **Platform / Runtime** | Typed contracts, NDJSON streaming ledger, deterministic clock, structured redactor, offline fixture runner. | **Live Multimodal VLM Adapter (`vlm/gemini-2.5-flash@1`)**, real image input uploaders, HTTP live inference endpoint (`/api/verify-live`). |
+| **Policy / Engine** | Conservative `worstAction` engine, provenance guard (inferred claims warn only), override protocol, sequence aggregator. | **Fail-Closed Export Gate** enforcing non-export on both `BLOCK` and `UNVERIFIED` states; regression test QA-10. |
+| **Corpus / Evaluation** | 7-case adversarial corpus, operating threshold calibration, automated test harness producing `eval/results.json`. | 100% precision on live multimodal laterality drift detection and fail-closed timeout handling. |
+| **Creator UX / Bench** | Responsive side-by-side studio, SVG bounding boxes, human status badges (`Kept`, `Broke canon`), override modal. | **Live Studio Workbench** with 4 judge presets, real file upload, **real downloadable cryptographic audit manifest (`.json`)**, and `localStorage` override persistence. |
 
 Detailed architectural disclosures are available in [docs/fifty_fifty_split.md](docs/fifty_fifty_split.md).
 
@@ -142,7 +142,7 @@ panelproof/
 │   ├── app.js                  # Review bench controller & overlay renderer
 │   ├── style.css               # Studio theme & design tokens
 │   ├── data/mock-receipts.js   # Interactive SVG panel fixtures
-│   └── tests/                  # Worker 03 assurance & security QA test suite (9 passing tests)
+│   └── tests/                  # Worker 03 assurance & security QA test suite (10 passing tests)
 ├── scripts/                    # Verification scripts & demo runner
 │   ├── demo.js                 # Local demo server & launcher (zero dependencies)
 │   ├── run-fixture-audit.js    # Local CLI fixture runner
