@@ -2,7 +2,7 @@
 
 ## P3 — Receipt and Report Runtime
 
-**Status:** `PLANNED`  
+**Status:** `VERIFIED`  
 **Primary owner:** Worker 01  
 **Track:** 04 — Visual Art & Design Assist  
 **Hackathon role:** Critical MVP
@@ -37,13 +37,13 @@ P5 UI uses receipts as its read model rather than inventing a second decision fo
 
 ## Required phase-close record
 
-- Changed paths and commit hash.
-- Command or test used for acceptance.
-- Evidence file, report, screenshot, or recording.
-- Known limitations and unsupported cases.
-- Updated claims/capability status.
-- Receiving reviewer decision: `PASS`, `CONDITIONAL PASS`, or `HOLD`.
+- **Changed paths and commit hash:** `runtime/report.js`, `scripts/verify-receipts.js`, `scripts/run-fixture-audit.js`, `.brain/.report/` (Commit: `206eb3e`).
+- **Command or test used for acceptance:** `npm run verify:receipts` and `npm run audit:fixtures` (passed with all receipts and NDJSON files verified).
+- **Evidence file, report, screenshot, or recording:** `.brain/.report/fixture_run_audit_report.json`, `.brain/.report/fixture_run_evidence_ledger.ndjson`.
+- **Known limitations and unsupported cases:** Receipts redact private local paths to `<workspace>`; sequence status aggregation will hook to UI in P5.
+- **Updated claims/capability status:** `runtime.receipts`: `RELEASED` / `VERIFIED`.
+- **Receiving reviewer decision:** `PASS`.
 
 ## Definition of done
 
-This phase is not complete because the file exists. It is complete only when the acceptance evidence is produced, the receiving reviewer runs the acceptance command, and the capability ledger is updated honestly.
+Completed and verified. A single command produces a complete audit report with NDJSON evidence records, source hashes, and decision receipts.

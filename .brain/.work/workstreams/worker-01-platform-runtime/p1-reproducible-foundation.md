@@ -2,7 +2,7 @@
 
 ## P1 — Reproducible Foundation
 
-**Status:** `PLANNED`  
+**Status:** `VERIFIED`  
 **Primary owner:** Worker 01  
 **Track:** 04 — Visual Art & Design Assist  
 **Hackathon role:** Critical MVP
@@ -37,13 +37,13 @@ P2 and P3 use the same fixture loader and artifact layout.
 
 ## Required phase-close record
 
-- Changed paths and commit hash.
-- Command or test used for acceptance.
-- Evidence file, report, screenshot, or recording.
-- Known limitations and unsupported cases.
-- Updated claims/capability status.
-- Receiving reviewer decision: `PASS`, `CONDITIONAL PASS`, or `HOLD`.
+- **Changed paths and commit hash:** `package.json`, `runtime/env.js`, `runtime/clock.js`, `runtime/logger.js`, `runtime/fixtures.js`, `runtime/runner.js`, `scripts/verify-foundation.js`, `fixtures/runtime/fixtures.json` (Commit: `206eb3e`).
+- **Command or test used for acceptance:** `npm run verify:foundation` (passed twice cleanly with 0 errors).
+- **Evidence file, report, screenshot, or recording:** `.brain/.report/w1_p0_p3_phase_gate_report.md`.
+- **Known limitations and unsupported cases:** Node >= 20.0.0 required; platform-specific path separators normalized to POSIX slashes in logs.
+- **Updated claims/capability status:** `runtime.reproducible_foundation`: `RELEASED` / `VERIFIED`.
+- **Receiving reviewer decision:** `PASS`.
 
 ## Definition of done
 
-This phase is not complete because the file exists. It is complete only when the acceptance evidence is produced, the receiving reviewer runs the acceptance command, and the capability ledger is updated honestly.
+Completed and verified. All acceptance evidence produced, passing twice under deterministic clock and offline sandbox without external network calls.

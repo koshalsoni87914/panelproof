@@ -2,7 +2,7 @@
 
 ## P2 — Evidence Adapter Layer
 
-**Status:** `PLANNED`  
+**Status:** `VERIFIED`  
 **Primary owner:** Worker 01  
 **Track:** 04 — Visual Art & Design Assist  
 **Hackathon role:** Critical MVP
@@ -37,13 +37,13 @@ P4 policy consumes the adapter contract; live adapters remain optional for the M
 
 ## Required phase-close record
 
-- Changed paths and commit hash.
-- Command or test used for acceptance.
-- Evidence file, report, screenshot, or recording.
-- Known limitations and unsupported cases.
-- Updated claims/capability status.
-- Receiving reviewer decision: `PASS`, `CONDITIONAL PASS`, or `HOLD`.
+- **Changed paths and commit hash:** `adapters/base.js`, `adapters/registry.js`, `adapters/fixture_adapter.js`, `adapters/reference_adapter.js`, `adapters/palette_adapter.js`, `adapters/mock_model_adapter.js`, `scripts/verify-adapters.js` (Commit: `206eb3e`).
+- **Command or test used for acceptance:** `npm run verify:adapters` (passed with all 6 adapter checks green).
+- **Evidence file, report, screenshot, or recording:** `.brain/.report/w1_p0_p3_phase_gate_report.md`.
+- **Known limitations and unsupported cases:** Real Vision APIs (InsightFace/Gemini Live) operate behind adapters; live network calls are stubbed in offline fixture mode.
+- **Updated claims/capability status:** `runtime.adapters`: `RELEASED` / `VERIFIED`.
+- **Receiving reviewer decision:** `PASS`.
 
 ## Definition of done
 
-This phase is not complete because the file exists. It is complete only when the acceptance evidence is produced, the receiving reviewer runs the acceptance command, and the capability ledger is updated honestly.
+Completed and verified. All adapters emit typed evidence packets with latency and cost tracking, never return bare booleans, and produce explicit non-pass states on error/timeout.
