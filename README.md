@@ -53,7 +53,7 @@ flowchart TD
     F -->|"Broke Canon (BLOCK)"| H["Export Blocked\n(Explainable Evidence Card)"]
     F -->|"Needs Call (UNVERIFIED)"| H
     H --> I["Artist Review Bench UI"]
-    I -->|"Editorial Justification"| J["Cryptographic Creator Override"]
+    I -->|"Editorial Justification"| J["Tamper-Evident Creator Override"]
     J --> G
 ```
 
@@ -80,7 +80,7 @@ The Creator Review Bench guides artists through four essential narrative inspect
 4. **Act 4: Locked Region Invariant (`L-001`) &rarr; `Broke canon` (`BLOCK`)**  
    Costume edit accidentally mutated 142 background pixels in a designated static zone. The invariant check flags `LOCKED_PIXELS_VIOLATED`.
 5. **Creator Override Protocol:**  
-   Artists can provide an editorial justification (e.g. dramatic lighting silhouette or story progression injury) to override non-invariant flags. The override is signed into the audit ledger while preserving machine ground truth.
+   Artists can provide an editorial justification (e.g. dramatic lighting silhouette or story progression injury) to override non-invariant flags. The override is recorded into the tamper-evident audit ledger while preserving machine ground truth.
 
 ---
 
@@ -93,7 +93,7 @@ PanelProof strictly partitions its codebase into an auditable **50% Pre-Built Fo
 | **Platform / Runtime** | Typed contracts, NDJSON streaming ledger, deterministic clock, structured redactor, offline fixture runner. | **Live Multimodal VLM Adapter (`vlm/gemini-2.5-flash@1`)**, real image input uploaders, HTTP live inference endpoint (`/api/verify-live`). |
 | **Policy / Engine** | Conservative `worstAction` engine, provenance guard (inferred claims warn only), override protocol, sequence aggregator. | **Fail-Closed Export Gate** enforcing non-export on both `BLOCK` and `UNVERIFIED` states; regression test QA-10. |
 | **Corpus / Evaluation** | 7-case adversarial corpus, operating threshold calibration, automated test harness producing `eval/results.json`. | 100% precision on live multimodal laterality drift detection and fail-closed timeout handling. |
-| **Creator UX / Bench** | Responsive side-by-side studio, SVG bounding boxes, human status badges (`Kept`, `Broke canon`), override modal. | **Live Studio Workbench** with 4 judge presets, real file upload, **real downloadable cryptographic audit manifest (`.json`)**, and `localStorage` override persistence. |
+| **Creator UX / Bench** | Responsive side-by-side studio, SVG bounding boxes, human status badges (`Kept`, `Broke canon`), override modal. | **Live Studio Workbench** with 4 judge presets, real file upload, **real downloadable tamper-evident audit manifest (`.json`)**, and `localStorage` override persistence. |
 
 Detailed architectural disclosures are available in [docs/fifty_fifty_split.md](docs/fifty_fifty_split.md).
 

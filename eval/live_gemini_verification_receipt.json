@@ -1,0 +1,40 @@
+{
+  "schema": "panelproof/live-evidence-receipt@1",
+  "executionId": "live_exec_1794934075411",
+  "mode": "live",
+  "provider": "Google Gemini",
+  "model": "gemini-2.5-flash",
+  "apiKeyConfigured": true,
+  "inputReferenceHash": "SHA256:d9b31e6feecac15bc010e16d0574ec7de7ddc95574d339a2d57f17f84e4a43c5",
+  "inputTargetHash": "SHA256:5f89a6124e81a2a493de9224169d076176779a07f24f7d4c36695020939b88a4",
+  "claim": {
+    "id": "trait.scar.side",
+    "label": "Facial Scar Laterality",
+    "expected": "scar on left jaw",
+    "threshold": 0.75
+  },
+  "verificationResult": {
+    "verdict": "BLOCK",
+    "observed": "right jaw",
+    "confidence": 0,
+    "evidence": {
+      "bbox": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "model": "gemini-2.5-flash",
+      "details": "The canonical reference specifies a scar on Karan's LEFT jaw. The generated target panel depicts the scar on the RIGHT jaw/cheek, which contradicts the required rule for facial scar laterality."
+    },
+    "latencyMs": 2961,
+    "costUsd": 0.00035,
+    "status": "OK"
+  },
+  "policyGating": {
+    "machineDecision": "BLOCK",
+    "canExport": false,
+    "failClosedEnforced": true
+  },
+  "evaluatedAt": "2026-11-17T16:47:55.411Z"
+}

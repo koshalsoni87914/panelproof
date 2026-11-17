@@ -94,6 +94,22 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // API Endpoint: Server & API Key Configuration Status
+  if (urlPath === '/api/status' && req.method === 'GET') {
+    const apiKeyPresent = Boolean(process.env.GOOGLE_API_KEY);
+    res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify({
+      status: 'ONLINE',
+      apiKeyConfigured: apiKeyPresent,
+      model: 'gemini-2.5-flash',
+      mode: apiKeyPresent ? 'live' : 'offline-fallback',
+      message: apiKeyPresent 
+        ? 'Live Multimodal Verifier Active (Google Gemini 2.5 Flash)' 
+        : 'Deterministic Offline Fallback Active (GOOGLE_API_KEY not configured)'
+    }));
+    return;
+  }
+
   // API Endpoint: Latest offline audit report
   if (urlPath === '/api/audit-report' && req.method === 'GET') {
     if (fs.existsSync(reportPath)) {
@@ -264,6 +280,8 @@ const server = http.createServer(async (req, res) => {
         targetHash: `SHA256:${tgtHash.substring(0, 16)}`,
         claims: evaluatedClaimItems,
         verifierEngine: liveVlmAdapter.name,
+        mode: liveVlmAdapter.apiKey ? 'live' : 'offline-fallback',
+        apiKeyConfigured: Boolean(liveVlmAdapter.apiKey),
         evaluationTimestamp: new Date().toISOString()
       };
 
@@ -280,12 +298,13 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // API Endpoint: Export Cryptographic Audit Manifest
+  // API Endpoint: Export Tamper-Evident Audit Manifest (Canonical Server Export)
   if (urlPath === '/api/export-manifest' && req.method === 'POST') {
     try {
       const body = await readJsonBody(req);
       const timestamp = new Date().toISOString();
       const manifestId = `manifest_${Date.now()}_${crypto.randomBytes(4).toString('hex')}`;
+      const manifestHash = crypto.createHash('sha256').update(JSON.stringify(body.panels || [])).digest('hex');
 
       const manifest = {
         schema: 'panelproof/audit-report@1',
@@ -298,11 +317,11 @@ const server = http.createServer(async (req, res) => {
         panels: body.panels || [],
         overridesCount: body.overrides?.length || 0,
         overrides: body.overrides || [],
-        auditLedgerSignature: {
+        integrity: {
           hashAlgorithm: 'SHA-256',
-          merkleRoot: crypto.createHash('sha256').update(JSON.stringify(body.panels || [])).digest('hex'),
-          chainIntegrity: 'VERIFIED',
-          signedBy: 'PanelProof Continuity Engine'
+          manifestHash,
+          verification: 'HASH_COMPUTED',
+          provenance: 'PanelProof Continuity Engine'
         }
       };
 
