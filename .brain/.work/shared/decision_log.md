@@ -34,3 +34,14 @@
 
 **Decision:** Fixture replay is a first-class mode; live generation is optional.  
 **Reason:** The core claim is verifiable policy, not availability of a particular image API.
+
+
+## ADR-008 — Zero-Dependency Creator Review Bench UI
+
+**Decision:** Author the Creator Review Bench (`web/`) in pure semantic HTML5, modern CSS Grid/Flexbox, and native ES6 Modules without external bundle tools or heavy front-end frameworks.  
+**Reason:** Ensures the review bench can be audited and opened directly from any clean clone in under 1 second without network access or `npm install` failures, guaranteeing 100% offline demo resilience.
+
+## ADR-009 — Mandatory Pre-built vs Live-built 50/50 Partition
+
+**Decision:** Complete and lock all deterministic policy, evidence ledgers, adversarial test corpuses, security scanners, and review bench UIs as the 50% pre-built foundation before commencing live generative model adapters.  
+**Reason:** Complies rigorously with hackathon rules, preserves unsquashed commit lineage, and prevents claims of unverified pre-built AI pipelines.

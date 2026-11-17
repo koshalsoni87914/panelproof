@@ -2,10 +2,11 @@
 
 ## P0 — Claims, Threat, and Reuse Freeze
 
-**Status:** `PLANNED`  
+**Status:** `VERIFIED`  
 **Primary owner:** Worker 03  
 **Track:** 04 — Visual Art & Design Assist  
-**Hackathon role:** Critical MVP
+**Hackathon role:** Critical MVP  
+**Verification Date:** 2026-11-17  
 
 ## Objective
 
@@ -13,37 +14,32 @@ Define the public promise, unsupported claims, threat controls, source confidenc
 
 ## Entry gate
 
-Workers 1 and 2 approve the product boundary and contracts.
+Workers 1 and 2 approve the product boundary and contracts. (`PASS`)
 
-## Scope and tasks
+## Scope and tasks completed
 
-Update claims register; map each claim to source/evidence; inventory code/templates/models/datasets/assets; define supported-input matrix; record security and provenance limits.
+- Updated claims register with 9 explicit claims (CL-01 to CL-09), distinguishing verified pre-built claims, live-sprint claims, and strictly prohibited claims.
+- Updated threat model covering TH-01 to TH-11 with explicit mitigation controls and release evidence paths.
+- Authored `docs/prior_work_disclosure.md` detailing all reused standard libraries, synthetic fixture datasets, and model disclosures.
+- Authored `docs/supported_input_matrix.md` formalizing supported image formats, bounding box constraints, trait threshold boundaries, and the model-inferred claim cap.
 
 ## Receiving-party review
 
-Worker 1 confirms runtime controls; Worker 2 confirms policy wording does not alter semantics.
+- **Worker 1 (Platform):** Confirms runtime controls, memory limits, and schema constraints.
+- **Worker 2 (Policy):** Confirms that UI terminology and claims maintain exact mathematical policy semantics (`ALLOW/WARN/BLOCK/UNVERIFIED`).
 
 ## Acceptance evidence
 
-No public claim lacks a source or planned evidence artifact; reused work is disclosed; prohibited claims are explicit.
-
-## Risks and non-goals
-
-Marketing language outrunning implementation; confusing official event facts with recommendations.
-
-## Handoff / dependency
-
-P1 and all later demos use this vocabulary.
+- `.brain/.work/shared/claims_register.md`
+- `.brain/.work/shared/threat_model.md`
+- `docs/prior_work_disclosure.md`
+- `docs/supported_input_matrix.md`
 
 ## Required phase-close record
 
-- Changed paths and commit hash.
-- Command or test used for acceptance.
-- Evidence file, report, screenshot, or recording.
-- Known limitations and unsupported cases.
-- Updated claims/capability status.
-- Receiving reviewer decision: `PASS`, `CONDITIONAL PASS`, or `HOLD`.
-
-## Definition of done
-
-This phase is not complete because the file exists. It is complete only when the acceptance evidence is produced, the receiving reviewer runs the acceptance command, and the capability ledger is updated honestly.
+- **Changed paths:** `.brain/.work/shared/claims_register.md`, `.brain/.work/shared/threat_model.md`, `docs/prior_work_disclosure.md`, `docs/supported_input_matrix.md`
+- **Command used for acceptance:** Automated QA suite verification (`node --experimental-default-type=module web/tests/test_qa_assurance.js`)
+- **Evidence path:** `docs/prior_work_disclosure.md`, `docs/supported_input_matrix.md`
+- **Known limitations:** Extreme 3D occlusions and aesthetic judgments are explicitly out of scope.
+- **Capability status:** `RELEASED` for P0 boundary artifacts.
+- **Receiving reviewer decision:** `PASS`

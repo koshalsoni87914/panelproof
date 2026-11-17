@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PanelProof — Creator Review Bench</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Global Studio Header -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo">P²</div>
+      <div>
+        <h1>PanelProof</h1>
+        <div class="brand-tag">Deterministic Continuity Assurance</div>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <div class="mode-badge">
+        <span class="mode-dot"></span>
+        OFFLINE / FIXTURE EVALUATION MODE (50% PRE-BUILT FOUNDATION)
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button id="btnExport" class="btn-export" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        Export Publication Sequence
+      </button>
+    </div>
+  </header>
+
+  <!-- Panel Sequence Strip -->
+  <div class="panel-strip-container">
+    <div class="strip-label">
+      <span>Sequence Strip: Chapter 04 &mdash; The Alley Encounter</span>
+      <span id="stripMetrics">Auditing 6 Panels</span>
+    </div>
+    <div class="panel-strip" id="panelStrip">
+      <!-- Dynamically populated cards -->
+    </div>
+  </div>
+
+  <!-- Main Workstation View -->
+  <main>
+    <!-- Left Column: Visual Evidence Studio -->
+    <section class="visual-studio">
+      <div class="studio-toolbar">
+        <span class="studio-title" id="studioTitle">Panel Inspection</span>
+        <div class="toggle-group">
+          <button class="btn-toggle active" id="btnToggleBbox">Bounding Boxes</button>
+          <button class="btn-toggle" id="btnToggleHeatmap">Region Mask</button>
+        </div>
+      </div>
+
+      <div class="side-by-side">
+        <!-- Reference Frame -->
+        <div class="image-frame">
+          <div class="image-label">
+            <span>Canonical Reference Sheet</span>
+            <span id="refSubjectBadge">Karan (Canon)</span>
+          </div>
+          <div class="canvas-wrapper">
+            <img id="refImage" src="" alt="Reference Model Sheet">
+          </div>
+        </div>
+
+        <!-- Target Generated Panel -->
+        <div class="image-frame">
+          <div class="image-label">
+            <span>Generated Panel Frame</span>
+            <span id="targetStatusBadge" class="status-pill status-allow">ALLOW</span>
+          </div>
+          <div class="canvas-wrapper" id="targetCanvasWrapper">
+            <img id="targetImage" src="" alt="Generated Target Panel">
+            <svg class="overlay-svg" id="overlaySvg" viewBox="0 0 400 400">
+              <!-- Overlay boxes rendered here -->
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="evidence-meta">
+        <span id="imageMetaHash">SHA256: 8f9b2...e1</span>
+        <span>Canvas Resolution: 400x400 (Normalized Vector Space)</span>
+      </div>
+    </section>
+
+    <!-- Right Column: Evidence & Policy Decision Engine -->
+    <section class="policy-column">
+      <!-- Verdict Banner -->
+      <div class="verdict-banner banner-allow" id="verdictBanner">
+        <div class="verdict-header">
+          <div class="verdict-title-row">
+            <span class="status-pill status-allow" id="bannerStatusPill">ALLOW</span>
+            <strong id="bannerReasonCode">ACCEPT_PASSED</strong>
+          </div>
+          <button class="verdict-action-btn" id="btnOpenOverride">Record Creator Override</button>
+        </div>
+        <p class="verdict-summary" id="bannerSummary">All declared character traits and style constraints verified.</p>
+        <div class="verdict-guidance" id="bannerGuidance">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+          </svg>
+          <span id="guidanceText">Safe for publication export.</span>
+        </div>
+      </div>
+
+      <!-- Evidence Breakdown Cards -->
+      <div class="evidence-section">
+        <div class="evidence-header">
+          <span>Continuous Evidence Ledger</span>
+          <span id="evidenceCount">4 Traits Evaluated</span>
+        </div>
+        <div class="evidence-list" id="evidenceList">
+          <!-- Dynamically populated cards -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Creator Override Modal -->
+  <div class="modal-overlay" id="overrideModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Record Creator Override</h3>
+        <button class="modal-close" id="btnCloseModal">&times;</button>
+      </div>
+
+      <div class="modal-alert" id="overrideAlert">
+        Overrides are cryptographically signed to the audit ledger. Pixel invariant violations cannot be overridden.
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="overrideCategory">Artistic Justification Category</label>
+        <select class="form-select" id="overrideCategory">
+          <option value="INTENTIONAL_ARTISTIC_DISTORTION">Intentional Artistic Distortion / Stylization</option>
+          <option value="DRAMATIC_LIGHTING_SILHOUETTE">Dramatic Lighting / Heavy Silhouette</option>
+          <option value="ALTERNATE_TIMELINE_VARIANT">Canon Variation / Alternate Timeline Costume</option>
+          <option value="STORY_PROGRESSION_INJURY">Narrative Progression (New Scar / Disguise)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="overrideText">Specific Editorial Explanation (Required)</label>
+        <textarea class="form-textarea" id="overrideText" placeholder="Explain why this deviation is intentional and preserves creative intent..."></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-secondary" id="btnCancelOverride">Cancel</button>
+        <button class="btn-primary" id="btnConfirmOverride">Sign Override to Ledger</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
