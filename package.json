@@ -14,6 +14,7 @@
     "verify:receipts": "node scripts/verify-receipts.js",
     "verify:w1-50": "node scripts/verify-contracts.js && node scripts/verify-foundation.js && node scripts/verify-adapters.js && node scripts/verify-receipts.js",
     "audit:fixtures": "node scripts/run-fixture-audit.js",
+    "demo": "node scripts/demo.js",
     "test": "npm run verify:w1-50"
   },
   "workspaces": [

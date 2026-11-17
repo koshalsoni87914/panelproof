@@ -1,6 +1,6 @@
 {
   "schema": "panelproof/eval-results@1",
-  "evaluatedAt": "2026-11-17T15:23:23.148Z",
+  "evaluatedAt": "2026-11-17T15:56:33.218Z",
   "corpusVersion": "1.0.0",
   "totalCases": 7,
   "matchingCases": 7,
@@ -8,7 +8,7 @@
   "wrongTraitRecall": 1,
   "cleanPanelFalseBlockRate": 0,
   "abstentionFidelity": 1,
-  "durationMs": 5,
+  "durationMs": 4,
   "results": [
     {
       "id": "C-001",

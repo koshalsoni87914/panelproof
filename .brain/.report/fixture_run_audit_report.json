@@ -1,12 +1,12 @@
 {
   "schema": "panelproof/report@1",
-  "reportId": "rep_1794928095734",
+  "reportId": "rep_1794930992518",
   "generatedAt": "2026-11-17T18:00:00.000Z",
   "metadata": {
     "corpusVersion": "v1",
     "thresholdVersion": "v1",
     "sourceHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-    "nodeVersion": "v22.11.0",
+    "nodeVersion": "v24.11.0",
     "platform": "win32",
     "subject": "Karan"
   },
@@ -148,7 +148,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.730Z"
+      "ts": "2026-11-17T15:56:32.514Z"
     },
     {
       "panel": "p03",
@@ -174,7 +174,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.731Z"
+      "ts": "2026-11-17T15:56:32.515Z"
     },
     {
       "panel": "p03",
@@ -192,7 +192,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.731Z"
+      "ts": "2026-11-17T15:56:32.516Z"
     },
     {
       "panel": "p03",
@@ -210,7 +210,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.731Z"
+      "ts": "2026-11-17T15:56:32.516Z"
     },
     {
       "panel": "p03",
@@ -228,7 +228,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.731Z"
+      "ts": "2026-11-17T15:56:32.516Z"
     },
     {
       "panel": "p03",
@@ -246,7 +246,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.732Z"
+      "ts": "2026-11-17T15:56:32.516Z"
     },
     {
       "panel": "p04",
@@ -264,7 +264,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.732Z"
+      "ts": "2026-11-17T15:56:32.517Z"
     },
     {
       "panel": "p04",
@@ -290,7 +290,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.732Z"
+      "ts": "2026-11-17T15:56:32.517Z"
     },
     {
       "panel": "p04",
@@ -308,7 +308,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.732Z"
+      "ts": "2026-11-17T15:56:32.517Z"
     },
     {
       "panel": "p04",
@@ -326,7 +326,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.733Z"
+      "ts": "2026-11-17T15:56:32.517Z"
     },
     {
       "panel": "p04",
@@ -344,7 +344,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.733Z"
+      "ts": "2026-11-17T15:56:32.517Z"
     },
     {
       "panel": "p04",
@@ -362,7 +362,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.733Z"
+      "ts": "2026-11-17T15:56:32.517Z"
     },
     {
       "panel": "p05",
@@ -380,7 +380,7 @@
       "costUsd": 0,
       "status": "TIMEOUT",
       "error": "ETIMEDOUT",
-      "ts": "2026-11-17T15:08:15.733Z"
+      "ts": "2026-11-17T15:56:32.517Z"
     },
     {
       "panel": "p05",
@@ -398,7 +398,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.733Z"
+      "ts": "2026-11-17T15:56:32.518Z"
     },
     {
       "panel": "p05",
@@ -416,7 +416,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.733Z"
+      "ts": "2026-11-17T15:56:32.518Z"
     },
     {
       "panel": "p05",
@@ -434,7 +434,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.733Z"
+      "ts": "2026-11-17T15:56:32.518Z"
     },
     {
       "panel": "p05",
@@ -452,7 +452,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.733Z"
+      "ts": "2026-11-17T15:56:32.518Z"
     },
     {
       "panel": "p05",
@@ -470,7 +470,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.733Z"
+      "ts": "2026-11-17T15:56:32.518Z"
     },
     {
       "panel": "p06",
@@ -488,7 +488,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.733Z"
+      "ts": "2026-11-17T15:56:32.518Z"
     },
     {
       "panel": "p06",
@@ -506,7 +506,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.733Z"
+      "ts": "2026-11-17T15:56:32.518Z"
     },
     {
       "panel": "p06",
@@ -524,7 +524,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.734Z"
+      "ts": "2026-11-17T15:56:32.518Z"
     },
     {
       "panel": "p06",
@@ -542,7 +542,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.734Z"
+      "ts": "2026-11-17T15:56:32.518Z"
     },
     {
       "panel": "p06",
@@ -560,7 +560,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.734Z"
+      "ts": "2026-11-17T15:56:32.518Z"
     },
     {
       "panel": "p06",
@@ -578,7 +578,7 @@
       "costUsd": 0,
       "status": "OK",
       "error": null,
-      "ts": "2026-11-17T15:08:15.734Z"
+      "ts": "2026-11-17T15:56:32.518Z"
     }
   ]
 }
