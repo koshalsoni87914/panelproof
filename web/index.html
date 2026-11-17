@@ -3,30 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PanelProof — Creator Review Bench</title>
+  <title>PanelProof — Creator Review Bench &bull; Comic Atelier Studio</title>
+  
+  <!-- High-Craft Google Fonts Typography Stack -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Global Studio Header -->
+  <!-- Atelier Control Header -->
   <header>
     <div class="brand">
-      <div class="brand-logo">P²</div>
-      <div>
-        <h1>PanelProof</h1>
-        <div class="brand-tag">Prompt Pirates &bull; Track 04 / Digital Art &amp; Visual Co-Pilot</div>
+      <div class="brand-logo-crest" title="PanelProof Studio Crest">
+        <span class="brand-glyph">P²</span>
+      </div>
+      <div class="brand-text">
+        <h1>PanelProof <span class="brand-version-badge">v1.0.0-rc</span></h1>
+        <div class="brand-tagline">Prompt Pirates &bull; Track 04 / Digital Art &amp; Visual Co-Pilot</div>
       </div>
     </div>
 
     <div class="header-center">
-      <div class="mode-badge">
-        <span class="mode-dot"></span>
+      <div class="status-station-badge">
+        <span class="pulse-indicator"></span>
         OFFLINE / FIXTURE EVALUATION MODE (50% PRE-BUILT FOUNDATION)
       </div>
     </div>
 
     <div class="header-actions">
-      <button id="btnExport" class="btn-export" disabled>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <button id="btnExport" class="btn-tactile btn-primary-action" disabled>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
         </svg>
         Export Publication Sequence
@@ -34,76 +42,94 @@
     </div>
   </header>
 
-  <!-- Panel Sequence Strip -->
+  <!-- Panel Sequence Strip (Light Table / Contact Sheet) -->
   <div class="panel-strip-container">
-    <div class="strip-label">
-      <span>Sequence Strip: Chapter 04 &mdash; The Alley Encounter</span>
-      <span id="stripMetrics">Auditing 6 Panels</span>
+    <div class="strip-topbar">
+      <div class="strip-title-group">
+        <span class="strip-caption">01 // Light Table</span>
+        <h2 class="strip-chapter-title">Sequence Strip: Chapter 04 &mdash; The Alley Encounter</h2>
+      </div>
+      <div class="strip-meta-pills">
+        <span class="meta-chip" id="stripMetrics">Auditing 6 Panels</span>
+        <span class="meta-chip">Hotkeys: [1]–[6]</span>
+        <span class="meta-chip">Fail-Closed Policy</span>
+      </div>
     </div>
+
     <div class="panel-strip" id="panelStrip">
       <!-- Dynamically populated cards -->
     </div>
+
     <!-- Canonical Reference Summary Bar -->
-    <div class="canon-banner" style="display:flex; gap:10px; align-items:center; margin-top:8px; padding:6px 12px; background:rgba(30,41,59,0.7); border-radius:6px; font-size:12px; border:1px solid #334155;">
-      <span style="color:#38bdf8; font-weight:bold;">Declared Canon (Karan):</span>
-      <span style="color:#cbd5e1;">Face: Ref Sheet</span>
-      <span style="color:#64748b;">&bull;</span>
-      <span style="color:#cbd5e1;">Trait: Scar on LEFT jaw</span>
-      <span style="color:#64748b;">&bull;</span>
-      <span style="color:#cbd5e1;">Hair: Silver front fringe</span>
-      <span style="color:#64748b;">&bull;</span>
-      <span style="color:#cbd5e1;">Costume: Navy double-breasted coat</span>
-      <span style="color:#64748b;">&bull;</span>
-      <span style="color:#cbd5e1;">Palette: House Swatch (&Delta;E &le; 8.0)</span>
+    <div class="canon-banner-card">
+      <div class="canon-banner-left">
+        <span class="canon-badge">Declared Canon (Karan)</span>
+        <div class="canon-chips-row">
+          <span class="canon-chip-item"><strong>Face:</strong> Ref Sheet</span>
+          <span class="canon-chip-item"><strong>Trait:</strong> Scar on LEFT jaw</span>
+          <span class="canon-chip-item"><strong>Hair:</strong> Silver front fringe</span>
+          <span class="canon-chip-item"><strong>Costume:</strong> Navy double-breasted coat</span>
+          <span class="canon-chip-item"><strong>Palette:</strong> House Swatch (&Delta;E &le; 8.0)</span>
+        </div>
+      </div>
+      <span class="canon-provenance-tag">Signed by Art Director &bull; Sheet Hash: 9d4f...a0</span>
     </div>
   </div>
 
   <!-- Main Workstation View -->
   <main>
-    <!-- Left Column: Visual Evidence Studio -->
+    <!-- Left Column: Visual Evidence Studio (Draftsman Canvas) -->
     <section class="visual-studio">
-      <div class="studio-toolbar">
-        <span class="studio-title" id="studioTitle">Panel Inspection</span>
-        <div class="toggle-group">
-          <button class="btn-toggle active" id="btnToggleBbox">Bounding Boxes</button>
-          <button class="btn-toggle" id="btnToggleHeatmap">Region Mask</button>
-        </div>
-      </div>
-
-      <div class="side-by-side">
-        <!-- Reference Frame -->
-        <div class="image-frame">
-          <div class="image-label">
-            <span>Canonical Reference Sheet</span>
-            <span id="refSubjectBadge">Karan (Canon)</span>
+      <div class="studio-card">
+        <div class="studio-header">
+          <div class="studio-title-area">
+            <span class="studio-title" id="studioTitle">Panel Inspection</span>
+            <span class="studio-subtitle">Draftsman Loupe &bull; Side-by-Side Invariant Inspection</span>
           </div>
-          <div class="canvas-wrapper">
-            <img id="refImage" src="" alt="Reference Model Sheet">
+          <div class="viewport-toggles">
+            <button class="btn-view-toggle active" id="btnToggleBbox" title="Toggle Bounding Boxes [B]">Bounding Boxes [B]</button>
+            <button class="btn-view-toggle" id="btnToggleHeatmap" title="Toggle Region Mask [M]">Region Mask [M]</button>
           </div>
         </div>
 
-        <!-- Target Generated Panel -->
-        <div class="image-frame">
-          <div class="image-label">
-            <span>Generated Panel Frame</span>
-            <div style="display:flex; gap:6px; align-items:center;">
-              <span id="targetHumanBadge" class="status-pill status-allow">Kept</span>
-              <span id="targetStatusBadge" class="status-pill status-allow">ALLOW</span>
+        <div class="side-by-side">
+          <!-- Reference Frame -->
+          <div class="image-frame">
+            <div class="image-label-row">
+              <span class="frame-label">Canonical Reference Sheet</span>
+              <span id="refSubjectBadge" class="meta-chip">Karan (Canon)</span>
+            </div>
+            <div class="canvas-wrapper">
+              <img id="refImage" src="" alt="Reference Model Sheet">
             </div>
           </div>
-          <div class="canvas-wrapper" id="targetCanvasWrapper">
-            <img id="targetImage" src="" alt="Generated Target Panel">
-            <svg class="overlay-svg" id="overlaySvg" viewBox="0 0 400 400">
-              <!-- Overlay boxes rendered here -->
-            </svg>
+
+          <!-- Target Generated Panel Frame -->
+          <div class="image-frame">
+            <div class="image-label-row">
+              <span class="frame-label">Generated Panel Frame</span>
+              <div style="display:flex; gap:6px; align-items:center;">
+                <span id="targetHumanBadge" class="status-pill status-allow">Kept</span>
+                <span id="targetStatusBadge" class="status-pill status-allow">ALLOW</span>
+              </div>
+            </div>
+            <div class="canvas-wrapper" id="targetCanvasWrapper">
+              <img id="targetImage" src="" alt="Generated Target Panel">
+              <svg class="overlay-svg" id="overlaySvg" viewBox="0 0 400 400">
+                <!-- Overlay boxes rendered here -->
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="evidence-meta">
-        <span id="imageMetaHash">SHA256: 8f9b2...e1</span>
-        <span id="fixtureMetaInfo">Fixture: C-001 | Corpus: v1.0.0 | Policy: v1.0.0</span>
-        <span id="panelContinuityBadge" style="color:#38bdf8; font-weight:bold;">Continuity: 100%</span>
+        <div class="studio-meta-bar">
+          <div class="meta-group">
+            <span id="imageMetaHash">SHA256: 8f9b2...e1</span>
+            <button class="btn-copy-hash" id="btnCopyHash" title="Click to copy hash">Copy Hash</button>
+            <span id="fixtureMetaInfo">Fixture: C-001 | Corpus: v1.0.0 | Policy: v1.0.0</span>
+          </div>
+          <span id="panelContinuityBadge" style="color:#38bdf8; font-weight:bold;">Continuity: 100%</span>
+        </div>
       </div>
     </section>
 
@@ -115,22 +141,31 @@
           <div class="verdict-title-row">
             <span class="status-pill status-allow" id="bannerHumanPill">Kept</span>
             <span class="status-pill status-allow" id="bannerStatusPill">ALLOW</span>
-            <strong id="bannerReasonCode">ACCEPT_PASSED</strong>
+            <strong class="verdict-code" id="bannerReasonCode">ACCEPT_PASSED</strong>
           </div>
-          <button class="verdict-action-btn" id="btnOpenOverride">Record Creator Override</button>
+          <button class="btn-tactile" id="btnOpenOverride">Record Creator Override [O]</button>
         </div>
         <p class="verdict-summary" id="bannerSummary">All declared character traits and style constraints verified.</p>
         
         <!-- Detailed Drift / Failure Breakdown Box -->
-        <div id="driftDetailsBox" style="display:none; margin:8px 0; padding:8px 10px; background:rgba(0,0,0,0.25); border-radius:4px; font-size:12px; border-left:3px solid #f43f5e;">
-          <div style="font-weight:bold; margin-bottom:4px;" id="driftFailedClaim">Failed Claim: trait.scar.side</div>
-          <div style="color:#94a3b8;" id="driftExpected">Expected: scar on the LEFT jaw</div>
-          <div style="color:#f43f5e;" id="driftObserved">Observed: scar appears on RIGHT jaw</div>
-          <div style="color:#cbd5e1; margin-top:2px;" id="driftConfidence">Confidence: 0.34 &bull; Threshold: 0.75 &bull; Evidence: Face Crop [230, 205, 260, 245]</div>
+        <div id="driftDetailsBox" class="drift-diagnostic-card" style="display:none;">
+          <div class="drift-row">
+            <span class="drift-label">Claim:</span>
+            <span id="driftFailedClaim" style="font-weight:700;">trait.scar.side</span>
+          </div>
+          <div class="drift-row">
+            <span class="drift-label">Expected:</span>
+            <span class="drift-val-expected" id="driftExpected">scar on the LEFT jaw</span>
+          </div>
+          <div class="drift-row">
+            <span class="drift-label">Observed:</span>
+            <span class="drift-val-observed" id="driftObserved">scar appears on RIGHT jaw</span>
+          </div>
+          <div class="drift-val-metrics" id="driftConfidence">Confidence: 0.34 &bull; Threshold: 0.75 &bull; Evidence: Face Crop [230, 205, 260, 245]</div>
         </div>
 
         <div class="verdict-guidance" id="bannerGuidance">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg class="guidance-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
           </svg>
           <span id="guidanceText">Safe for publication export.</span>
@@ -140,8 +175,8 @@
       <!-- Evidence Breakdown Cards -->
       <div class="evidence-section">
         <div class="evidence-header">
-          <span>Continuous Evidence Ledger</span>
-          <span id="evidenceCount">4 Traits Evaluated</span>
+          <span class="evidence-title">Continuous Evidence Ledger</span>
+          <span class="evidence-count" id="evidenceCount">4 Traits Evaluated</span>
         </div>
         <div class="evidence-list" id="evidenceList">
           <!-- Dynamically populated cards -->
@@ -154,8 +189,8 @@
   <div class="modal-overlay" id="overrideModal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>Record Creator Override</h3>
-        <button class="modal-close" id="btnCloseModal">&times;</button>
+        <h3 class="modal-title">Record Creator Override</h3>
+        <button class="modal-close" id="btnCloseModal" title="Close modal [Esc]">&times;</button>
       </div>
 
       <div class="modal-alert" id="overrideAlert">
@@ -178,11 +213,26 @@
       </div>
 
       <div class="modal-actions">
-        <button class="btn-secondary" id="btnCancelOverride">Cancel</button>
-        <button class="btn-primary" id="btnConfirmOverride">Sign Override to Ledger</button>
+        <button class="btn-tactile" id="btnCancelOverride">Cancel</button>
+        <button class="btn-tactile btn-primary-action" id="btnConfirmOverride">Sign Override to Ledger</button>
       </div>
     </div>
   </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer"></div>
+
+  <!-- Atelier Studio Footer -->
+  <footer class="studio-footer">
+    <div class="footer-left">
+      <span>PanelProof Studio Engine &bull; Track 04 Prompt Pirates</span>
+      <span class="meta-chip">Corpus v1.0.0</span>
+      <span class="meta-chip">Ledger: SHA-256 Chained</span>
+    </div>
+    <div class="footer-right">
+      <span>Shortcuts: <kbd>[1–6]</kbd> Panel &bull; <kbd>[B]</kbd> BBox &bull; <kbd>[M]</kbd> Mask &bull; <kbd>[O]</kbd> Override &bull; <kbd>[Esc]</kbd> Dismiss</span>
+    </div>
+  </footer>
 
   <script type="module" src="app.js"></script>
 </body>
